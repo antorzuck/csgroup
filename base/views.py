@@ -16,10 +16,8 @@ def home(request):
 def dashboard(request):
     if request.user.is_authenticated:
         pr = Profile.objects.get(user=request.user)
-        tm = pr.team.all()
-        for t in tm:
-            print(t.username)
-        context = {'tm':tm, 'p':pr}
+
+        context = {'tm':"hi", 'p':pr}
         return render(request, 'dashboard.html', context)
     return render(request, 'login.html')
 
@@ -45,13 +43,16 @@ def handle_reg(request):
         if request.GET.get('ref'):
             r = request.GET.get('ref')
         return render(request, 'register.html',context={'r':r})
+
     if request.method == 'POST':
         data = request.POST
-        username = data.get('username')
+        name = data.get('fname')
+        username = data.get('uname')
         email = data.get('email')
         number = data.get('number')
         refer = data.get('refer')
-        pasword = data.get('pass1')
+        print(refer)
+        pasword = data.get('password')
 
         c = User.objects.create(
             username=username,
@@ -60,14 +61,20 @@ def handle_reg(request):
         )
         print("cccccccccccccccccccccc777777777", c)
         c.save()
-        p = Profile.objects.create(user=c, number=number, refer_link=random.randint(100000, 999999))
  
         try:
-            get_refer_user = Profile.objects.get(refer_link=refer)
-            get_refer_user.team.add(c)
+            print("ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+            refer_user = Profile.objects.get(refer_link=refer)
 
-            get_refer_user.team.all()
-        except:
+            print(refer_user)
+            print("xxxxxxxxxxxxxxx")
+            if refer_user:
+                print("yes")
+
+                p = Profile.objects.create(user=c, referred_by=refer_user, name=name, number=number, refer_link=number)
+        except Exception as e:
+            p = Profile.objects.create(user=c, name=name, number=number, refer_link=number)
+            print("opps", e)
             pass
         login(request, c)
 
@@ -76,7 +83,7 @@ def handle_reg(request):
 def get_teams(request, username):
     p = Profile.objects.get(user__username=username)
     print(p)
-    tms = p.team.all()
+    tms = 'hi'
     context = {'p':p, 'tms':tms}
     return render(request, 'teams.html', context)
 

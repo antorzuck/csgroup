@@ -44,6 +44,89 @@
  
 </head>
 <body class="bg-gray-100">
+
+
+
+<header class=" z-10 sticky top-0 navbar">
+  <nav class="ring-1 ring-cyan-800 p-2 flex items-center justify-between w-full h-18 bg-cyan-800">
+    <logo class="text-white"><!--
+      <img class="p-2 hover:rounded-lg hover:bg-gray-700 w-14" src="/csgroup/logocs.png" alt="" />-->
+      
+      csgroup
+    </logo>
+    
+ 
+ 
+ 
+ <div class="gap-1 text-white flex items-center">
+   
+   <a href="/register">
+   <button class="md:hidden rounded-md p-2 bg-gradient-to-r from-cyan-500 to-blue-500"  type="submit">Register
+   
+   </button>
+ </a>
+ <a href="/signin">
+         <button class="md:hidden rounded-md p-2 bg-gradient-to-r from-violet-500 to-fuchsia-500" type="submit">Login
+         </button>
+       
+ </a>
+   
+ 
+    <div id="burger" onclick="burger()" class="hover:ring bg-cyan-700 rounded-lg md:hidden px-2 pt-2 burger">
+     <box-icon color="white" name="menu-alt-right"></box-icon>
+    </div>
+    
+    </div>
+    
+    
+     <ul class="hidden md:block text-white md:flex items-center justify-center gap-2">
+       
+       <li class="">
+         <a href="/register">
+         <button class="rounded-md p-2 bg-gradient-to-r from-cyan-500 to-blue-500" type="submit">Register
+         
+         </button>
+       </a>
+       </li>
+       
+       
+               <li class="">
+
+                 <a href="/signin">
+                 <button class="rounded-md p-2 bg-gradient-to-r from-violet-500 to-fuchsia-500" type="submit">Login
+       
+                 </button>
+               </a>
+               </li>
+       
+       
+       
+    
+      
+      
+    </ul>
+    
+    
+    
+    
+    
+    
+    
+  </nav>
+  
+     <ul id="item" class="shadow-md transition ease-in-out delay-150 hidden text-white flex flex-col items-center bg-cyan-800 justify-center">
+      
+      <li class="p-2 hover:rounded-md hover:bg-gray-800">About Us</li>
+      
+         <li class="p-2 hover:rounded-md hover:bg-gray-800">Contact</li>
+      
+      
+    </ul>
+    
+  
+</header>
+
+
  
  
   {% block body %}
