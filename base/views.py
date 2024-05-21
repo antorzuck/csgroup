@@ -71,7 +71,7 @@ def handle_reg(request):
             if refer_user:
                 print("yes")
 
-                p = Profile.objects.create(user=c, referred_by=refer_user, name=name, number=number, refer_link=number)
+                p = Profile.objects.create(user=c, referred_by=refer_user.user, name=name, number=number, refer_link=number)
         except Exception as e:
             p = Profile.objects.create(user=c, name=name, number=number, refer_link=number)
             print("opps", e)
