@@ -3,8 +3,15 @@ from base.models import *
 from django.contrib.auth import authenticate, login, logout
 import random
 
+
 def home(request):
-    return render(request, 'csgrp.html')
+    products = Product.objects.all()
+    cats = Cat.objects.all()
+    context = {
+        'pro' : products,
+        'cats' : cats
+    }
+    return render(request, 'home.html', context=context)
 
 def dashboard(request):
     if request.user.is_authenticated:
@@ -15,8 +22,6 @@ def dashboard(request):
         context = {'tm':tm, 'p':pr}
         return render(request, 'dashboard.html', context)
     return render(request, 'login.html')
-
-
 
 
 def handle_login(request):

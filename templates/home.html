@@ -1,0 +1,288 @@
+{% extends 'csgrp.html' %}
+{% load static %}
+
+
+
+{% block body %}
+
+
+<header class=" z-10 sticky top-0 navbar">
+    <nav class="ring-1 ring-cyan-800 p-2 flex items-center justify-between w-full h-18 bg-cyan-800">
+      <logo class="text-white"><!--
+        <img class="p-2 hover:rounded-lg hover:bg-gray-700 w-14" src="/csgroup/logocs.png" alt="" />-->
+        
+        csgroup
+      </logo>
+      
+   
+   
+   
+   <div class="gap-1 text-white flex items-center">
+     
+     <a href="/register">
+     <button class="md:hidden rounded-md p-2 bg-gradient-to-r from-cyan-500 to-blue-500"  type="submit">Register
+     
+     </button>
+   </a>
+   <a href="/signin">
+           <button class="md:hidden rounded-md p-2 bg-gradient-to-r from-violet-500 to-fuchsia-500" type="submit">Login
+           </button>
+         
+   </a>
+     
+   
+      <div id="burger" onclick="burger()" class="hover:ring bg-cyan-700 rounded-lg md:hidden px-2 pt-2 burger">
+       <box-icon color="white" name="menu-alt-right"></box-icon>
+      </div>
+      
+      </div>
+      
+      
+       <ul class="hidden md:block text-white md:flex items-center justify-center gap-2">
+         
+         <li class="">
+           <a href="/register">
+           <button class="rounded-md p-2 bg-gradient-to-r from-cyan-500 to-blue-500" type="submit">Register
+           
+           </button>
+         </a>
+         </li>
+         
+         
+                 <li class="">
+ 
+                   <a href="/signin">
+                   <button class="rounded-md p-2 bg-gradient-to-r from-violet-500 to-fuchsia-500" type="submit">Login
+         
+                   </button>
+                 </a>
+                 </li>
+         
+         
+         
+      
+        
+        
+      </ul>
+      
+      
+      
+      
+      
+      
+      
+    </nav>
+    
+       <ul id="item" class="shadow-md transition ease-in-out delay-150 hidden text-white flex flex-col items-center bg-cyan-800 justify-center">
+        
+        <li class="p-2 hover:rounded-md hover:bg-gray-800">About Us</li>
+        
+           <li class="p-2 hover:rounded-md hover:bg-gray-800">Contact</li>
+        
+        
+      </ul>
+      
+    
+  </header>
+  
+  
+  
+  
+  <section class="h-96 flex-col items-center justify-center bg-cyan-800 p-5 hero md:grid grid-cols-2">
+  
+    <div class="text-center m-auto col-span-1 text-centr">
+      <h1 class="hero-heading font-bold text-4xl text-white"> <span class="highlight">CS Group</span>
+  
+        <svg class="underline" viewBox="0 0 300 30" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gradient">
+              <stop offset="0%" stop-color="#FF6347" />
+              <stop offset="50%" stop-color="#FFD700" />
+              <stop offset="100%" stop-color="#00FF00" />
+            </linearGradient>
+          </defs>
+          <path d="M10,20 Q150,0 290,20" stroke="url(#gradient)" stroke-width="4" fill="none" />
+        </svg>
+  
+  
+      </h1>
+  
+      <p class="text-xl text-white my-3 px-2">
+        The biggest online service platform. Customer service, contact service and connection service. All service are together.
+      </p>
+   <!--   <br />
+  
+      <a class="hover:ring hover:bg-cyan-700 mt-5 text-white px-5 py-4 bg-cyan-600 rounded-md" href="#">
+        <span class="mb-5"></span>
+  
+        Register
+  
+  
+      </a> -->
+    </div>
+  
+  
+   
+  
+  
+    <div class="hidden md:block m-auto col-span-1">
+      <img class="w-80" src="{% static 'undraw_world_re_768g.svg' %}" alt="" />
+  
+    </div>
+  
+  
+  
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  <section class="my-3 p-2 md:p-5 cats">
+    
+       <h2 class="my-5 text-xl text-black">
+         Popular category
+       </h2>
+    
+    <div class=" m-3 text-center grid grid-cols-3 md:grid-cols-6 md:gap-0 gap-1">
+      
+      {% for cat in cats %}
+      <div class="p-5 rounded-xl bg-white relative md:w-48">
+       <img class="" src="{{cat.image.url}}" alt="" />
+      
+       
+                     <span class="text-xs rounded text-white p-1 opacity-60 bg-cyan-700 bottom-2 left-2 text-center absolute">
+                 {{cat.title}}
+               </span>
+      </div>
+      {% endfor %}
+ 
+     
+
+     
+     
+    </div>
+    
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <section class="p-2 md:p-5 product">
+    
+    
+    <div class="flex items-center justify-between">
+    <h2 class="my-5 text-xl text-black">
+      Popular products
+    </h2>
+    
+    <div class="filter">
+      <button onclick="drop()" class="float-end text-white rounded-lg bg-cyan-700 p-2">Filter</button>
+      <br />
+      <div id="drp" class="hidden rounded float-left my-3 p-2 bg-white shadow">
+        <ul class="flex flex-col">
+         <li class="hover:bg-gray-300 hover:rounded p-2">Short by price</li>
+         <li class=" hover:bg-gray-300 hover:rounded p-2">Short by ratings</li>
+        </ul>
+      </div>
+      
+      
+    </div>
+    
+    
+    </div>
+    <div class="grid gap-1 grid-cols-2 md:grid-cols-4">
+      
+      <div class="rounded-md shadow bg-gray-50 p-2 text-center">
+        <img src="/csgroup/Picsart_24-05-18_12-42-42-865.png" alt="" />
+        
+        
+         <h3 class="my-2 text-md font-bold ">৳300</h3>
+        
+              <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+                <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+                  <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+                    <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+                      <box-icon size="xs" color="gold" name="star"></box-icon><span class="text-sm">(4.5) Ratings</span>
+                      
+                
+        
+        <p class="my-2">CS Group T-Shirt | Navy Blue Color | With Logo</p>
+        
+        
+        <button href="#" class="rounded-md text-white w-full p-2 bg-cyan-800" href="#">Buy Now</button>
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
+           <div class="rounded-md shadow bg-gray-50 p-2 text-center">
+             <img src="/csgroup/Picsart_24-05-18_13-05-02-122.png" alt="" />
+      <h3 class="my-2 text-md font-bold">৳600</h3>
+             <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+             <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+             <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+             <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+             <box-icon size="xs" color="gold" name="star"></box-icon><span class="text-sm">(4.6) Ratings</span>
+      
+      
+      
+             <p class="my-2">Blue Denim Stylish Jeans Pant For Men | Low Stock</p>
+      
+      
+             <button href="#" class="rounded-md text-white w-full p-2 bg-cyan-800" href="#">Buy Now</button>
+      
+           </div>
+      
+      
+      
+      
+      
+           <div class="rounded-md shadow bg-gray-50 p-2 text-center">
+        <img src="/csgroup/Picsart_24-05-18_13-27-18-426.png" alt="" />
+        
+        
+         <h3 class="my-2 text-md font-bold ">৳1500</h3>
+        
+              <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+                <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+                  <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+                    <box-icon type="solid" size="xs" color="gold" name="star"></box-icon>
+                      <box-icon size="xs" color="gold" name="star"></box-icon><span class="text-sm">(4.5) Ratings</span>
+                      
+                
+        
+        <p class="my-2">Fashionable and stylish smart watch for everyone </p>
+        
+        
+        <button href="#" class="rounded-md text-white w-full p-2 bg-cyan-800" href="#">Buy Now</button>
+        
+      </div>
+      
+      
+      
+      
+      
+      
+    </div>
+    
+    
+    
+  </section>
+
+
+
+
+{% endblock %}
