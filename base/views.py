@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from base.models import *
 from django.contrib.auth import authenticate, login, logout
 import random
@@ -6,10 +6,40 @@ import random
 def home(request):
     return render(request, 'csgrp.html')
 
+def dashboard(request):
+    if request.user.is_authenticated:
+        pr = Profile.objects.get(user=request.user)
+        tm = pr.team.all()
+        for t in tm:
+            print(t.username)
+        context = {'tm':tm, 'p':pr}
+        return render(request, 'dashboard.html', context)
+    return render(request, 'login.html')
+
+
+
+
+def handle_login(request):
+    if request.method == 'GET':
+        return render(request, 'login.html')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('pass')
+        ath = authenticate(username=username,password=password)
+        if ath is not None:
+            return redirect(dashboard)
+        return redirect('/')
+
+
+
+
 
 def handle_reg(request):
     if request.method == 'GET':
-        return render(request, 'register.html')
+        r = None
+        if request.GET.get('ref'):
+            r = request.GET.get('ref')
+        return render(request, 'register.html',context={'r':r})
     if request.method == 'POST':
         data = request.POST
         username = data.get('username')
@@ -36,8 +66,13 @@ def handle_reg(request):
             pass
         login(request, c)
 
-        return render(request, 'dashboard.html', context={
-            'user': c,
-            'p' : p,
-        })
+        return redirect(dashboard)
+
+def get_teams(request, username):
+    p = Profile.objects.get(user__username=username)
+    print(p)
+    tms = p.team.all()
+    context = {'p':p, 'tms':tms}
+    return render(request, 'teams.html', context)
+
 

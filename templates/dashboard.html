@@ -4,16 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+ <style>
+   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+   
+   
+   body{
+     font-family: "Space Grotesk", sans-serif;
+   }
+   
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-cyan-800">
 
 
-<h1>Hi, {{request.user}}</h1>
-<br>
-<br>
+<h1 class="m-3 p-5 rounded-lg shadow text-white text-center bg-cyan-700 ">Hi, {{request.user}}</h1>
+
+<div class="text-center rounded-lg text-white p-5 mx-3 shadow bg-cyan-700">
 your balance is 00
+</div>
 
 <br>
-your refer no is {{p.refer_link}}
+
+<div class="text-center rounded-lg text-white p-5 mx-3 shadow bg-cyan-700">
+your refer url is 127.0.0.1:8000/register?ref={{p.refer_link}}
+</div>
+<br>
+<p>
+
+
+
+<h2 class="text-center text-white text-2xl">Teams</h2>
+{% for t in tm %}
+<div class="text-center gap-2 items-center text-white p-5 mx-3 shadow bg-cyan-700 rounded-lg my-2 font-bold flex">
+
+<img class="w-8 rounded circle"
+  src="https://api.dicebear.com/8.x/initials/svg?seed={{t.username}}"
+  alt="avatar" />
+
+{{t.username}}
+
+<a href="/teams/{{t.username}}" class="bg-cyan-600 h-15 w-auto p-2 rounded-lg float-end">See Team</a>
+
+
+</div>
+{% endfor %}
+
+</p>
+
+
+
 </body>
 </html>

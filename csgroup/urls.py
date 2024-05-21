@@ -7,7 +7,10 @@ from base.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    path('register', handle_reg)
+    path('register', handle_reg),
+    path('signin', handle_login),
+    path('dashboard', dashboard),
+    path('teams/<str:username>', get_teams)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
