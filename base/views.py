@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from base.models import *
 from django.contrib.auth import authenticate, login, logout
 import random
-
+from django.http import JsonResponse
+import requests
+import json
 
 def home(request):
     products = Product.objects.all()
@@ -12,6 +14,34 @@ def home(request):
         'cats' : cats
     }
     return render(request, 'home.html', context=context)
+
+def active(request):
+    url = "https://sandbox.uddoktapay.com/api/checkout-v2"
+    payload = {
+    "full_name": request.user.username,
+    "email": request.user.email,
+    "amount": "100",
+    "metadata": {
+        "order_id": "16",
+        "product_id": "5"
+    },
+    "redirect_url": "http://127.0.0.1:8000/dashboard",
+    "return_type": "GET",
+    "cancel_url": "localhost"
+    }
+    headers = {
+    "accept": "application/json",
+    "RT-UDDOKTAPAY-API-KEY": "982d381360a69d419689740d9f2e26ce36fb7a50",
+    "content-type": "application/json"
+    }
+
+    response = requests.post(url, json=payload, headers=headers)
+
+    print(response.text)
+    xx = json.loads(response.text)
+    return redirect(xx['payment_url'])
+
+
 
 
 def dashboard(request):

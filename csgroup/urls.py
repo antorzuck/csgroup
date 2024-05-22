@@ -11,6 +11,7 @@ urlpatterns = [
     path('signin', handle_login),
     path('logout', handle_logout),
     path('dashboard', dashboard),
+    path('active', active),
     path('teams/<str:username>', get_teams)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

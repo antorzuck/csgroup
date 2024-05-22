@@ -5,7 +5,7 @@
 {% block body %}
 
 
-
+{% if p.is_verified %}
 <section>
     <div class="info grid grid-cols-2 md:grid-cols-3 gap-2">
         <div class="bg-green-300 card p-3 rounded-md shadow flex flex-col items-center justify-center">
@@ -41,8 +41,23 @@
 
 </section>
 
+{% else %}
 
+<section class="flex h-screen items-center justify-center">
 
+<div class="m-3 p-5 shadow bg-white rounded-lg">
+<h1 class="font-bold-bold my-3 text-cyan-800 text-xl">
+Active your account with Bkash/Nagad/Rocket
+</h1>
 
+<p class="text-gray-700 text-sm">
+Thanks for creating account on cs group. Before start earnings you need to active you account by recharge 100 taka. click the button below.
+</p>
+<a href="/active">
+<button class="p-2 w-full bg-cyan-800 mt-2 rounded-md hover:ring text-white">Active account</button>
+</a>
+</section>
+
+{% endif %}
 
 {% endblock %}
