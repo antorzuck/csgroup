@@ -13,6 +13,7 @@ def home(request):
     }
     return render(request, 'home.html', context=context)
 
+
 def dashboard(request):
     if request.user.is_authenticated:
         pr = Profile.objects.get(user=request.user)
@@ -23,21 +24,26 @@ def dashboard(request):
 
 
 def handle_login(request):
+    if request.user.is_authenticated:
+        return redirect(dashboard)
     if request.method == 'GET':
         return render(request, 'login.html')
     if request.method == 'POST':
         username = request.POST.get('username')
-        password = request.POST.get('pass')
+        password = request.POST.get('password')
+
         ath = authenticate(username=username,password=password)
+        print(ath)
         if ath is not None:
+            login(request, ath)
             return redirect(dashboard)
         return redirect('/')
 
 
 
-
-
 def handle_reg(request):
+    if request.user.is_authenticated:
+        return redirect(dashboard)
     if request.method == 'GET':
         r = None
         if request.GET.get('ref'):
@@ -54,7 +60,7 @@ def handle_reg(request):
         print(refer)
         pasword = data.get('password')
 
-        c = User.objects.create(
+        c = User.objects.create_user(
             username=username,
             email=email,
             password=pasword

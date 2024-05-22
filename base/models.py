@@ -55,13 +55,12 @@ def create_referral(sender, instance, created, **kwargs):
 
 """
 
-
+"""
 @receiver(post_save, sender=Profile)
 def create_referral(sender, instance, created, **kwargs):
     if created and instance.referred_by:
         referrer_user = instance.referred_by
 
-        # Get the Profile instance for the referrer_user
         try:
             referrer_profile = Profile.objects.get(user=referrer_user)
         except Profile.DoesNotExist:
@@ -84,6 +83,37 @@ def create_referral(sender, instance, created, **kwargs):
 
             print(referrer_profile)
             print("just runned *********&$$$%^$%^$%^$%^")
+"""
 
+@receiver(post_save, sender=Profile)
+def create_referral(sender, instance, created, **kwargs):
+    # Only run the code if the profile is updated and is_verified is set to True
+    if not created and instance.is_verified:
+        referrer_user = instance.referred_by
+
+        # Proceed only if there is a referrer
+        if referrer_user:
+            try:
+                referrer_profile = Profile.objects.get(user=referrer_user)
+            except Profile.DoesNotExist:
+                referrer_profile = None
+
+            for generation in range(1, 11):
+                if not referrer_profile:
+                    break
+
+                Referral.objects.create(referrer=referrer_profile, referred_user=instance, generation=generation)
+                referrer_user = referrer_profile.referred_by  # Move up one generation
+
+                if referrer_user:
+                    try:
+                        referrer_profile = Profile.objects.get(user=referrer_user)
+                    except Profile.DoesNotExist:
+                        referrer_profile = None
+                else:
+                    referrer_profile = None
+
+                print(referrer_profile)
+                print("just runned *********&$$$%^$%^$%^$%^")
 
 
