@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+    
+    body{
+      font-family: "Space Grotesk", sans-serif;
+    }
+        ul {
+            font-family: "Comfortaa"
+        }
+
+
+        .tx h1 {
+            color: #D8DEE9;
+        }
+    </style>
+
+</head>
+
+<body x-data="{open : false }" class="p-0 m-0 gap-0 md:flex bg-gray-50">
+
+
+
+
+    <nav x-show="open" class="rng md:!block absolute md:!relative bg-cyan-800 w-60 h-screen">
+
+        <div class=" nav flex items-center justify-between">
+
+            <a class="p-4 px-4 text-xl" href="">
+                <h1 class="font-bold text-white">CS Group</h1>
+            </a>
+
+
+            <a @click="open = !open" class=" md:hidden px-2 py-2 hover:rounded-lg hover:bg-gray-700 text-white">
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+
+
+
+
+
+
+            </a>
+
+        </div>
+
+        <ul class="text-white p-3 items">
+
+            <li class="font-bold p-2 hover:rounded-md hover:bg-cyan-700 ">Dashboard</li>
+
+            <li class="font-bold p-2 hover:rounded-md hover:bg-cyan-700 ">Team</li>
+
+            <li class="font-bold p-2 hover:rounded-md hover:bg-cyan-700 ">Leaderboard</li>
+
+            <li class="font-bold p-2 hover:rounded-md hover:bg-cyan-700 ">Withdraw</li>
+
+        </ul>
+
+
+
+
+    </nav>
+    </div>
+
+    <div class="md:flex-grow">
+
+
+        <header class="bg-cyan-800 flex items-center gap-1 h-16 p-2 text-white">
+
+
+
+            <a @click="open = !open" class="md:hidden p-2 focus:bg-gray-700 focus:rounded">
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </a>
+
+
+
+
+            <logo>
+                <h1 class="text-cyan-700 pt-2 md:hidden text-2xl">CS Group</h1>
+            </logo>
+
+
+
+
+
+        </header>
+
+
+
+        <main class="p-1 m-1">
+
+
+            {% block body %}
+            {% endblock %}
+           
+            
+
+        </main>
+
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

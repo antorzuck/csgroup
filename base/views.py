@@ -17,9 +17,9 @@ def home(request):
 def dashboard(request):
     if request.user.is_authenticated:
         pr = Profile.objects.get(user=request.user)
-
-        context = {'tm':"hi", 'p':pr}
-        return render(request, 'dashboard.html', context)
+        r = pr.total_refer()
+        context = {'r':r, 'p':pr}
+        return render(request, 'dashhome.html', context)
     return render(request, 'login.html')
 
 
@@ -39,6 +39,10 @@ def handle_login(request):
             return redirect(dashboard)
         return redirect('/')
 
+
+def handle_logout(request):
+    logout(request)
+    return redirect(handle_login)
 
 
 def handle_reg(request):

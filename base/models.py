@@ -22,12 +22,20 @@ class Profile(models.Model):
     name = models.CharField(max_length=200)
     number = models.CharField(max_length=50)
     balance = models.FloatField(default=00)
-    refer_link = models.IntegerField()
+    refer_link = models.CharField(max_length=100)
     is_verified = models.BooleanField(default=False)
     referred_by = models.ForeignKey(User, related_name='teams', null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.number
+
+    def total_refer(self):
+        return Referral.objects.filter(referrer=self, generation=1).count()
+
+    def total_team(self):
+        return Referral.objects.filter(referrer=self).count()
+
+
 
 
 class Referral(models.Model):
@@ -38,60 +46,17 @@ class Referral(models.Model):
     def __str__(self):
         return f"{self.referrer} referred {self.referred_user} (Generation {self.generation})"
 
-"""
-@receiver(post_save, sender=Profile)
-def create_referral(sender, instance, created, **kwargs):
-    if created and instance.referred_by:
-        referrer = instance.referred_by
 
-        for generation in range(1, 11):
-            if not referrer:
-                break
-            
-            Referral.objects.create(referrer=referrer, referred_user=instance, generation=generation)
-            referrer = referrer.referred_by  # Move up one generation
-            print(referrer)
-            print("just runned *********&$$$%^$%^$%^$%^")
-
-"""
-
-"""
-@receiver(post_save, sender=Profile)
-def create_referral(sender, instance, created, **kwargs):
-    if created and instance.referred_by:
-        referrer_user = instance.referred_by
-
-        try:
-            referrer_profile = Profile.objects.get(user=referrer_user)
-        except Profile.DoesNotExist:
-            referrer_profile = None
-
-        for generation in range(1, 11):
-            if not referrer_profile:
-                break
-
-            Referral.objects.create(referrer=referrer_profile, referred_user=instance, generation=generation)
-            referrer_user = referrer_profile.referred_by  # Move up one generation
-
-            if referrer_user:
-                try:
-                    referrer_profile = Profile.objects.get(user=referrer_user)
-                except Profile.DoesNotExist:
-                    referrer_profile = None
-            else:
-                referrer_profile = None
-
-            print(referrer_profile)
-            print("just runned *********&$$$%^$%^$%^$%^")
-"""
 
 @receiver(post_save, sender=Profile)
 def create_referral(sender, instance, created, **kwargs):
-    # Only run the code if the profile is updated and is_verified is set to True
+
     if not created and instance.is_verified:
         referrer_user = instance.referred_by
 
-        # Proceed only if there is a referrer
+        reward = {
+            1 : '60', 2:'5', 3:'4', 4:'3',5:'2', 6:'2', 7:'1', 8:'1', 9:'1', 10:'1'
+        }
         if referrer_user:
             try:
                 referrer_profile = Profile.objects.get(user=referrer_user)
@@ -101,6 +66,9 @@ def create_referral(sender, instance, created, **kwargs):
             for generation in range(1, 11):
                 if not referrer_profile:
                     break
+
+                referrer_profile.balance += int(reward[generation])
+                referrer_profile.save()
 
                 Referral.objects.create(referrer=referrer_profile, referred_user=instance, generation=generation)
                 referrer_user = referrer_profile.referred_by  # Move up one generation

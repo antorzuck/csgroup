@@ -1,0 +1,48 @@
+{% extends 'dash.html' %}
+
+
+
+{% block body %}
+
+
+
+<section>
+    <div class="info grid grid-cols-2 md:grid-cols-3 gap-2">
+        <div class="bg-green-300 card p-3 rounded-md shadow flex flex-col items-center justify-center">
+            <h2 class="text-gray-600 text-md">Balance</h2>
+            <p class="text-2xl text-gray-900">{{p.balance}}</p>
+        </div>
+
+
+        <div class="card p-3 bg-yellow-300 rounded-md shadow flex flex-col items-center justify-center">
+            <h2 class="text-gray-600 text-md"> Total Refers</h2>
+            <p class="text-2xl text-gray-900">{{r}}</p>
+        </div>
+
+
+        <div class="card p-3 bg-blue-300 rounded-md shadow flex flex-col items-center justify-center">
+            <h2 class="text-gray-600 text-md">Total teams</h2>
+            <p class="text-2xl text-gray-900">{{p.total_team}}</p>
+        </div>
+
+        <div class="card p-3 bg-purple-300 rounded-md shadow flex flex-col items-center justify-center">
+            <h2 class="text-gray-600 text-md">Refer link</h2>
+            <p class="text-2xl text-gray-900">{{p.refer_link}}</p>
+        </div>
+
+
+    </div>
+
+
+
+    
+        
+
+
+</section>
+
+
+
+
+
+{% endblock %}
