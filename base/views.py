@@ -14,7 +14,7 @@ def home(request):
         'cats' : cats
     }
     return render(request, 'home.html', context=context)
-
+"""
 def active(request):
     url = "https://sandbox.uddoktapay.com/api/checkout-v2"
     payload = {
@@ -41,7 +41,13 @@ def active(request):
     xx = json.loads(response.text)
     return redirect(xx['payment_url'])
 
+"""
 
+def active(request):
+    p = Profile.objects.get(user=request.user)
+    p.is_verified = True
+    p.save()
+    return redirect(dashboard)
 
 
 def dashboard(request):
