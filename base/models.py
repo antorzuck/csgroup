@@ -35,7 +35,9 @@ class Profile(models.Model):
     def total_team(self):
         return Referral.objects.filter(referrer=self).count()
 
-
+    def total_refer_income(self):
+        tf = Referral.objects.filter(referrer=self, generation=1).count()
+        return 50 * tf
 
 
 class Referral(models.Model):
