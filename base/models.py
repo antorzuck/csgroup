@@ -67,13 +67,13 @@ def create_referral(sender, instance, created, **kwargs):
         referrer_user = instance.referred_by
 
         reward = {
-            1: 60, 2: 5, 3: 4, 4: 3, 5: 2,
-            6: 2, 7: 1, 8: 1, 9: 1, 10: 1
+            1: 50, 2: 5, 3: 4, 4: 3, 5: 2,
+            6: 1, 7: 1
         }
 
         generation = 1  # Initialize generation counter
 
-        while referrer_user and generation <= 10:
+        while referrer_user and generation <= 7:
             try:
                 referrer_profile = Profile.objects.get(user=referrer_user)
             except Profile.DoesNotExist:

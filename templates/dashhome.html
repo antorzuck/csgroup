@@ -7,6 +7,11 @@
 
 {% if p.is_verified %}
 <section>
+
+<div class="my-3">
+<h2 class=" font-bold text-gray-800 text-lg">Dashboard</h2>
+</div>
+
     <div class="info grid grid-cols-2 md:grid-cols-3 gap-2">
 
 
@@ -30,7 +35,7 @@
 
 
 <div class="card p-3 bg-yellow-300 rounded-md shadow flex flex-col items-center justify-center">
-            <h2 class="text-gray-600 text-md"> Total Refers Income</h2>
+            <h2 class="text-center text-gray-600 text-md"> Total Refers Income</h2>
             <p class="text-2xl text-gray-900">{{p.total_refer_income}}</p>
         </div>
 
@@ -38,7 +43,7 @@
 
 
         <div class="card p-3 bg-blue-300 rounded-md shadow flex flex-col items-center justify-center">
-            <h2 class="text-gray-600 text-md">Total genaration income</h2>
+            <h2 class="text-gray-600 text-center text-md">Total genaration income</h2>
             <p class="text-2xl text-gray-900">{{p.total_gen_income}}</p>
         </div>
 
@@ -51,9 +56,66 @@
     </div>
 
 
-<div class="user-table p-5 rounded-md shadow my-5"></div>
-    
-        
+<div class="my-5">
+<h2 class="mt-5 font-bold text-gray-800 text-lg">Your teams</h2>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="relative overflow-x-auto z-0">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-2 py-3">
+                    #id
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    balance
+                </th>
+                <th scope="col" class="px-2 py-3">
+                    refer
+                </th>
+
+               <th scope="col" class="px-6 py-3">
+                    team
+                </th>
+            </tr>
+        </thead>
+        <tbody class="">
+{% for ru in rf %}
+            <tr class="bg-white  border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{ forloop.counter }}
+                </th>
+                <td class="px-6 py-4">
+                   <div class="flex gap-1 md:gap-0">
+<img class="w-6 rounded-3xl"  src="https://api.dicebear.com/8.x/initials/svg?seed={{ru.referred_user.user}}">
+<p class="m-auto font-bold">{{ru.referred_user.user}}</p>
+</div>
+                </td>
+                <td class="px-6 py-4">
+                    {{ru.referred_user.balance}}
+                </td>
+                <td class="px-2 py-4">
+                    {{ru.referred_user.total_refer}}
+                </td>
+<td class="px-6 py-4">
+                   <a href=""><button class="p-2 rounded-md bg-cyan-800 text-white">teams</button>
+                </td>
+            </tr>
+         {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 
 </section>
@@ -68,11 +130,12 @@ Active your account with Bkash/Nagad/Rocket
 </h1>
 
 <p class="text-gray-700 text-sm">
-Thanks for creating account on cs group. Before start earnings you need to active your account by recharge 100 taka. click the button below.
+Thanks for creating account on cs group. Before start earnings you need to verify your account by recharge 100 taka. Please click the button below.
 </p>
 <a href="/active">
-<button class="p-2 w-full bg-cyan-800 mt-2 rounded-md hover:ring text-white">Active account</button>
+<button class="w-full p-2 my-2 text-white bg-cyan-800 rounded-md hover:ring">Active account</button>
 </a>
+</div>
 </section>
 
 {% endif %}

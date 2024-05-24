@@ -54,7 +54,9 @@ def dashboard(request):
     if request.user.is_authenticated:
         pr = Profile.objects.get(user=request.user)
         r = pr.total_refer()
-        context = {'r':r, 'p':pr}
+        rf = Referral.objects.filter(referrer=pr, generation=1)
+
+        context = {'rf':rf, 'r':r, 'p':pr}
         return render(request, 'dashhome.html', context)
     return render(request, 'login.html')
 
