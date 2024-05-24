@@ -8,26 +8,29 @@
 {% if p.is_verified %}
 <section>
     <div class="info grid grid-cols-2 md:grid-cols-3 gap-2">
-        <div class="bg-green-300 card p-3 rounded-md shadow flex flex-col items-center justify-center">
+
+
+        <div class="bg-cyan-300 card p-3 rounded-md shadow flex flex-col items-center justify-center">
+            <h2 class="text-gray-600 text-md"> Shopping Balance</h2>
+            <p class="text-2xl text-gray-900">100</p>
+        </div>
+
+        <div class="bg-orange-300 card p-3 rounded-md shadow flex flex-col items-center justify-center">
             <h2 class="text-gray-600 text-md">Total Earnings</h2>
             <p class="text-2xl text-gray-900">{{p.balance}}</p>
         </div>
 
 
-        <div class="bg-green-300 card p-3 rounded-md shadow flex flex-col items-center justify-center">
-            <h2 class="text-gray-600 text-md"> Shopping Balance</h2>
-            <p class="text-2xl text-gray-900">100</p>
-        </div>
 
 
-        <div class="card p-3 bg-yellow-300 rounded-md shadow flex flex-col items-center justify-center">
+        <div class="card p-3 bg-lime-300 rounded-md shadow flex flex-col items-center justify-center">
             <h2 class="text-gray-600 text-md"> Total Refers</h2>
             <p class="text-2xl text-gray-900">{{r}}</p>
         </div>
 
 
 <div class="card p-3 bg-yellow-300 rounded-md shadow flex flex-col items-center justify-center">
-            <h2 class="text-gray-600 text-md"> Refers Income</h2>
+            <h2 class="text-gray-600 text-md"> Total Refers Income</h2>
             <p class="text-2xl text-gray-900">{{p.total_refer_income}}</p>
         </div>
 
@@ -35,12 +38,12 @@
 
 
         <div class="card p-3 bg-blue-300 rounded-md shadow flex flex-col items-center justify-center">
-            <h2 class="text-gray-600 text-md">Total teams</h2>
-            <p class="text-2xl text-gray-900">{{p.total_team}}</p>
+            <h2 class="text-gray-600 text-md">Total genaration income</h2>
+            <p class="text-2xl text-gray-900">{{p.total_gen_income}}</p>
         </div>
 
         <div class="card p-3 bg-purple-300 rounded-md shadow flex flex-col items-center justify-center">
-            <h2 class="text-gray-600 text-md">Refer link</h2>
+            <h2 class="text-gray-600 text-md">Refer code</h2>
             <p class="text-2xl text-gray-900">{{p.refer_link}}</p>
         </div>
 
@@ -48,7 +51,7 @@
     </div>
 
 
-
+<div class="user-table p-5 rounded-md shadow my-5"></div>
     
         
 

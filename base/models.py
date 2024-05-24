@@ -39,6 +39,15 @@ class Profile(models.Model):
         tf = Referral.objects.filter(referrer=self, generation=1).count()
         return 50 * tf
 
+    def total_gen_income(self):
+        if self.balance == 0:
+            return 00
+        tf = Referral.objects.filter(referrer=self, generation=1).count()
+        refincome = tf * 50
+        return self.balance - 50
+
+
+
 
 class Referral(models.Model):
     referrer = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='referrals_made')
