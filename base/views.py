@@ -6,6 +6,8 @@ from django.http import JsonResponse
 import requests
 import json
 from django.core.paginator import Paginator
+from django.views.decorators.csrf import csrf_exempt
+
 
 def home(request):
     products = Product.objects.all()
@@ -131,16 +133,25 @@ def handle_reg(request):
         return redirect(dashboard)
 
 
-
+@csrf_exempt
 def get_teams(request, username):
-    genon = 1
-    p = Profile.objects.get(user__username=username)
-    ref = Referral.objects.filter(referrer=p, generation=genon)
-    paginator = Paginator(ref, 2)
-    page_number = request.GET.get('page')
-    ref = paginator.get_page(page_number)
-
-    context = {'p':p, 'ref':ref}
-    return render(request, 'team.html', context)
+    if request.method == 'GET':
+        return render(request, 'team.html')
+    if request.method == 'POST':
+        genon = 1
+        p = Profile.objects.get(user__username=username)
+        ref = Referral.objects.filter(referrer=p, generation=genon).order_by('-id')
+        paginator = Paginator(ref, 2)
+        page_number = request.GET.get('page')
+        ref = paginator.get_page(page_number)
+        data = []
+        for r in ref:
+            data.append({
+        'username': r.referred_user.user.username,
+        'balance' : r.referred_user.balance,
+        'refer'   : r.referred_user.total_refer()
+            })
+        print(data)
+        return JsonResponse({'data':data})
 
 

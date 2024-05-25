@@ -4,92 +4,97 @@
 
 {% block body %}
 
-
-
-<div class="container mx-auto p-4">
-    <div class="flex justify-between items-center mb-4">
-        <h1 class="text-2xl font-bold">User Table</h1>
-        <input type="text" id="search" class="border rounded-md border-gray-300 p-2" placeholder="Search...">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-2xl font-bold">User Table</h1>
+            <input type="text" id="search" class="border border-gray-300 p-2" placeholder="Search...">
+        </div>
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-200">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2 border-b">Username</th>
+                        <th class="px-4 py-2 border-b">Balance</th>
+                        <th class="px-4 py-2 border-b">Refer</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table">
+                    <!-- Data will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <div class="flex justify-between items-center mt-4">
+            <button id="prev" class="bg-gray-300 p-2 rounded" disabled>Previous</button>
+            <div id="page-info"></div>
+            <button id="next" class="bg-gray-300 p-2 rounded">Next</button>
+        </div>
     </div>
-    <div class="overflow-x-auto">
-        <table class="min-w-full bg-white border border-gray-200">
-            <thead>
-                <tr>
-                    <th class="px-4 py-2 border-b">ID</th>
-                    <th class="px-4 py-2 border-b">Name</th>
-                    <th class="px-4 py-2 border-b">Email</th>
-                </tr>
-            </thead>
-            <tbody id="user-table">
-                <!-- Data will be inserted here by JavaScript -->
-            </tbody>
-        </table>
-    </div>
-    <div class="flex justify-between items-center mt-4">
-        <button id="prev" class="bg-gray-300 p-2 rounded" disabled>Previous</button>
-        <div id="page-info"></div>
-        <button id="next" class="bg-gray-300 p-2 rounded">Next</button>
-    </div>
-</div>
 
-<script>
-    const users = [
-        { id: 1, name: "John Doe", email: "john@example.com" },
-        { id: 2, name: "Jane Doe", email: "jane@example.com" },
-        // Add more users as needed
-    ];
+    <script>
+        const apiEndpoint = '/teams/username'; // Replace with your Django API endpoint
+        const rowsPerPage = 5;
+        let currentPage = 1;
+        let users = [];
+        let filteredUsers = [];
+        const searchInput = document.getElementById('search');
 
-    const rowsPerPage = 5;
-    let currentPage = 1;
-    const searchInput = document.getElementById('search');
-    let filteredUsers = [...users];
+        async function fetchUsers(page = 1) {
+            try {
+                const response = await fetch(`${apiEndpoint}?page=${page}`);
+                const data = await response.json();
+                users = data; // Assuming the API returns an array of users
+                filteredUsers = [...users];
+                renderTable();
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        }
 
-    function renderTable() {
-        const tableBody = document.getElementById('user-table');
-        tableBody.innerHTML = '';
-        const start = (currentPage - 1) * rowsPerPage;
-        const end = start + rowsPerPage;
-        const pageUsers = filteredUsers.slice(start, end);
+        function renderTable() {
+            const tableBody = document.getElementById('user-table');
+            tableBody.innerHTML = '';
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const pageUsers = filteredUsers.slice(start, end);
 
-        pageUsers.forEach(user => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td class="px-4 py-2 border-b">${user.id}</td>
-                <td class="px-4 py-2 border-b">${user.name}</td>
-                <td class="px-4 py-2 border-b">${user.email}</td>
-            `;
-            tableBody.appendChild(row);
+            pageUsers.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="px-4 py-2 border-b">${user.username}</td>
+                    <td class="px-4 py-2 border-b">${user.balance}</td>
+                    <td class="px-4 py-2 border-b">${user.refer}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            document.getElementById('page-info').textContent = `Page ${currentPage} of ${Math.ceil(filteredUsers.length / rowsPerPage)}`;
+            document.getElementById('prev').disabled = currentPage === 1;
+            document.getElementById('next').disabled = end >= filteredUsers.length;
+        }
+
+        document.getElementById('prev').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                fetchUsers(currentPage);
+            }
         });
 
-        document.getElementById('page-info').textContent = `Page ${currentPage} of ${Math.ceil(filteredUsers.length / rowsPerPage)}`;
-        document.getElementById('prev').disabled = currentPage === 1;
-        document.getElementById('next').disabled = end >= filteredUsers.length;
-    }
+        document.getElementById('next').addEventListener('click', () => {
+            if ((currentPage * rowsPerPage) < filteredUsers.length) {
+                currentPage++;
+                fetchUsers(currentPage);
+            }
+        });
 
-    document.getElementById('prev').addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            filteredUsers = users.filter(user => user.username.toLowerCase().includes(query) || user.refer.toLowerCase().includes(query));
+            currentPage = 1;
             renderTable();
-        }
-    });
+        });
 
-    document.getElementById('next').addEventListener('click', () => {
-        if (currentPage * rowsPerPage < filteredUsers.length) {
-            currentPage++;
-            renderTable();
-        }
-    });
-
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.toLowerCase();
-        filteredUsers = users.filter(user => user.name.toLowerCase().includes(query) || user.email.toLowerCase().includes(query));
-        currentPage = 1;
-        renderTable();
-    });
-
-    // Initial render
-    renderTable();
-</script>
-
+        // Initial fetch and render
+        fetchUsers();
+    </script>
 
 {% endblock %}
