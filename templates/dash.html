@@ -61,13 +61,15 @@
         </div>
 
         <ul class="text-white p-3 items">
-
+           <a href="/dashboard">
             <li class="font-bold p-2 hover:rounded-md hover:bg-cyan-700 "><i class="text-xl mr-1  bi bi-speedometer"></i> Dashboard</li>
-
+           </a>
+          <a href="/teams/{{request.user.username}}">
             <li class="font-bold p-2 hover:rounded-md hover:bg-cyan-700 "><i class="bi bi-person-hearts mr-1 text-xl"></i> Team</li>
-
+          </a>
+<a href="/leaderboard">
             <li class="font-bold p-2 hover:rounded-md hover:bg-cyan-700 "><i class="bi bi-clipboard-pulse mr-1 text-xl"></i> Leaderboard</li>
-
+</a>
             <li class="font-bold p-2 hover:rounded-md hover:bg-cyan-700 "><i class="bi bi-cash-coin mr-1 text-xl"></i> Withdraw</li>
           <a href="/logout"> <li class="font-bold p-2 hover:rounded-md hover:bg-cyan-700 "><i class="bi bi-box-arrow-right mr-1 text-xl"></i> Logout</li></a>
 
@@ -100,7 +102,7 @@
 
 
             <logo>
-                <h1 class="text-cyan-700 pt-2 md:hidden text-2xl">CS Group</h1>
+                <h1 class="text-white pt-2 md:hidden text-lg">CS Group</h1>
             </logo>
 
 

@@ -136,22 +136,16 @@ def handle_reg(request):
 @csrf_exempt
 def get_teams(request, username):
     if request.method == 'GET':
-        return render(request, 'team.html')
-    if request.method == 'POST':
+        gen = request.GET.get('gen')
         genon = 1
+        if gen:
+            genon = gen
         p = Profile.objects.get(user__username=username)
         ref = Referral.objects.filter(referrer=p, generation=genon).order_by('-id')
         paginator = Paginator(ref, 2)
         page_number = request.GET.get('page')
         ref = paginator.get_page(page_number)
-        data = []
-        for r in ref:
-            data.append({
-        'username': r.referred_user.user.username,
-        'balance' : r.referred_user.balance,
-        'refer'   : r.referred_user.total_refer()
-            })
-        print(data)
-        return JsonResponse({'data':data})
+        context = {'ref':ref, 'gen':gen, 'username':username}
+        return render(request, 'team.html', context)
 
 
