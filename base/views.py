@@ -5,6 +5,7 @@ import random
 from django.http import JsonResponse
 import requests
 import json
+from django.core.paginator import Paginator
 
 def home(request):
     products = Product.objects.all()
@@ -50,11 +51,12 @@ def active(request):
     return redirect(dashboard)
 
 
+
 def dashboard(request):
     if request.user.is_authenticated:
         pr = Profile.objects.get(user=request.user)
         r = pr.total_refer()
-        rf = Referral.objects.filter(referrer=pr, generation=1)
+        rf = Referral.objects.filter(referrer=pr, generation=1).order_by('-id')[0:5]
 
         context = {'rf':rf, 'r':r, 'p':pr}
         return render(request, 'dashhome.html', context)
@@ -128,11 +130,17 @@ def handle_reg(request):
 
         return redirect(dashboard)
 
+
+
 def get_teams(request, username):
+    genon = 1
     p = Profile.objects.get(user__username=username)
-    print(p)
-    tms = 'hi'
-    context = {'p':p, 'tms':tms}
-    return render(request, 'teams.html', context)
+    ref = Referral.objects.filter(referrer=p, generation=genon)
+    paginator = Paginator(ref, 2)
+    page_number = request.GET.get('page')
+    ref = paginator.get_page(page_number)
+
+    context = {'p':p, 'ref':ref}
+    return render(request, 'team.html', context)
 
 

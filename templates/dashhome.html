@@ -57,7 +57,7 @@
 
 
 <div class="my-5">
-<h2 class="mt-5 font-bold text-gray-800 text-lg">Your teams</h2>
+<h2 class="mt-5 font-bold text-gray-800 text-lg">Recent 5 refer</h2>
 </div>
 
 
@@ -69,8 +69,8 @@
 
 
 <div class="relative overflow-x-auto z-0">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
                 <th scope="col" class="px-2 py-3">
                     #id
@@ -92,8 +92,8 @@
         </thead>
         <tbody class="">
 {% for ru in rf %}
-            <tr class="bg-white  border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr class="bg-white  border-b">
+                <th scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap ">
                     {{ forloop.counter }}
                 </th>
                 <td class="px-6 py-4">
@@ -112,9 +112,13 @@
                    <a href=""><button class="p-2 rounded-md bg-cyan-800 text-white">teams</button>
                 </td>
             </tr>
+        
          {% endfor %}
         </tbody>
     </table>
+     <a href="/temas">
+    <button class="p-2 w-full bg-cyan-800 text-white my-3 rounded-md">See full teams</button>
+     </a>
 </div>
 
 
