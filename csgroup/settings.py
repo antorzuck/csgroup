@@ -13,6 +13,7 @@ ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -21,8 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'base',
-    'rest_framework',
-    'corsheaders',
+    
 ]
 
 MIDDLEWARE = [

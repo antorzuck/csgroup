@@ -53,15 +53,18 @@ def active(request):
     return redirect(dashboard)
 
 def withdrawl(request):
+    p = Profile.objects.get(user=request.user)
+    ww = Withdraw.objects.filter(profile=p).order_by('-id')
     if request.method == "POST":
         amount = request.POST.get('amount')
         method = request.POST.get('method')
-        p = Profile.objects.get(user=request.user)
-        w = Withdraw.objects.create(profile=p, amount=amount,method=method)
-        print(w)
+
+        if int(amount) > int(p.balance):
+            return JsonResponse({'message' : 'Withdraw amount should be less then balance'})
+        w = Withdraw.objects.create(profile=p, amount=amount,method=method, status='pending')
         return redirect('/withdraw')
 
-    return render(request, 'withdraw.html')
+    return render(request, 'withdraw.html', context={'p':p, 'ww':ww})
 
 def leaderboard(request):
     pass
