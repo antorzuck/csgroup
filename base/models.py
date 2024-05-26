@@ -20,8 +20,10 @@ class Cat(models.Model):
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, null=True, blank=True)
     number = models.CharField(max_length=50)
     balance = models.FloatField(default=00)
+    shopping_balance = models.IntegerField(default=0)
     refer_link = models.CharField(max_length=100)
     is_verified = models.BooleanField(default=False)
     referred_by = models.ForeignKey(User, related_name='teams', null=True, blank=True, on_delete=models.CASCADE)
