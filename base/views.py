@@ -52,6 +52,19 @@ def active(request):
     p.save()
     return redirect(dashboard)
 
+def withdrawl(request):
+    if request.method == "POST":
+        amount = request.POST.get('amount')
+        method = request.POST.get('method')
+        p = Profile.objects.get(user=request.user)
+        w = Withdraw.objects.create(profile=p, amount=amount,method=method)
+        print(w)
+        return redirect('/withdraw')
+
+    return render(request, 'withdraw.html')
+
+def leaderboard(request):
+    pass
 
 
 def dashboard(request):
@@ -145,7 +158,7 @@ def get_teams(request, username):
         paginator = Paginator(ref, 2)
         page_number = request.GET.get('page')
         ref = paginator.get_page(page_number)
-        context = {'ref':ref, 'gen':gen, 'username':username}
+        context = {'ref':ref, 'gen':genon, 'username':username}
         return render(request, 'team.html', context)
 
 

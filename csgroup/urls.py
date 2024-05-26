@@ -12,6 +12,8 @@ urlpatterns = [
     path('logout', handle_logout),
     path('dashboard', dashboard),
     path('active', active),
+    path('withdraw', withdrawl),
+    path('leaderboard', leaderboard),
     path('teams/<str:username>', get_teams)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

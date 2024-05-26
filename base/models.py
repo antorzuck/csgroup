@@ -49,6 +49,13 @@ class Profile(models.Model):
         return self.balance - 50
 
 
+class Withdraw(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    amount = models.IntegerField(default=0)
+    method = models.CharField(max_length=100)
+    status = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+
 
 
 class Referral(models.Model):
