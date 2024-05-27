@@ -25,8 +25,13 @@
     <option selected disabled>Choose generation</option>
     <option {% if gen == '1' %} selected {% endif %}  value="1">generation one</option>
     <option {% if gen == '2' %} selected {% endif %} value="2">generation two</option>
-    <option value="3">generation three</option>
-    <option value="4">generation four</option>
+    <option {% if gen == '3' %} selected {% endif %} value="3">generation three</option>
+    <option {% if gen == '4' %} selected {% endif %} value="4">generation four</option>
+    <option {% if gen == '5' %} selected {% endif %} value="5">generation five</option>
+    <option {% if gen == '6' %} selected {% endif %} value="6">generation six</option>
+    <option {% if gen == '7' %} selected {% endif %} value="7">generation seven</option>
+ 
+
   </select>
 </form>
 
@@ -64,11 +69,11 @@
         </div>
         <div class="flex justify-between items-center mt-4">
 {% if ref.has_previous %}
-<a href="?page={{ref.previous_page_number}}&gen={{gen}}"            <button id="prev" class="bg-gray-300 p-2 rounded">Previous</button>
+<a href="?page={{ref.previous_page_number}}&gen={{gen}}" >        <button id="prev" class="bg-gray-300 p-2 rounded">Previous</button>
           </a> {% endif %}
    <div id="page-info"></div> {% if ref.has_next %}
 
-<a href="?page={{ref.next_page_number}}&gen={{gen}}"
+<a href="?page={{ref.next_page_number}}&gen={{gen}}">
             <button id="next" class="bg-gray-300 p-2 rounded">Next</button>
       </a> {% endif %} </div>
     </div>

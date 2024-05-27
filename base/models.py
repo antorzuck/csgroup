@@ -56,6 +56,11 @@ class Withdraw(models.Model):
     status = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.status} withdraw of {str(self.profile.user.username)}"
+
+
+
 
 
 class Referral(models.Model):

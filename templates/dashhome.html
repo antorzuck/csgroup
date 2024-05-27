@@ -57,12 +57,8 @@
 
 
 <div class="my-5">
-<h2 class="mt-5 font-bold text-gray-800 text-lg">Recent 5 refer</h2>
+<h2 class="mt-5 font-bold text-gray-800 text-lg">Top 5 refer</h2>
 </div>
-
-
-
-
 
 
 
@@ -98,7 +94,7 @@
                 </th>
                 <td class="px-6 py-4">
                    <div class="flex gap-1 md:gap-0">
-<img class="w-6 rounded-3xl"  src="https://api.dicebear.com/8.x/initials/svg?seed={{ru.referred_user.user}}">
+<img class="w-6 rounded-3xl"  src="https://api.dicebear.com/8.x/big-smile/svg?seed={{ru.referred_user.user}}">
 <p class="m-auto font-bold">{{ru.referred_user.user}}</p>
 </div>
                 </td>
@@ -109,14 +105,14 @@
                     {{ru.referred_user.total_refer}}
                 </td>
 <td class="px-6 py-4">
-                   <a href=""><button class="p-2 rounded-md bg-cyan-800 text-white">teams</button>
+                   <a href="/teams/{{ru.referred_user.user.username}}"><button class="p-2 rounded-md bg-cyan-800 text-white">teams</button>
                 </td>
             </tr>
         
          {% endfor %}
         </tbody>
     </table>
-     <a href="/temas">
+     <a href="/teams/{{request.user.username}}">
     <button class="p-2 w-full bg-cyan-800 text-white my-3 rounded-md">See full teams</button>
      </a>
 </div>

@@ -7,6 +7,7 @@ import requests
 import json
 from django.core.paginator import Paginator
 from django.views.decorators.csrf import csrf_exempt
+from base.decorators import onlyuser
 
 
 def home(request):
@@ -53,6 +54,8 @@ def active(request):
     p.save()
     return redirect(dashboard)
 """
+
+@onlyuser
 def withdrawl(request):
     p = Profile.objects.get(user=request.user)
     ww = Withdraw.objects.filter(profile=p).order_by('-id')
@@ -66,8 +69,10 @@ def withdrawl(request):
         return redirect('/withdraw')
     return render(request, 'withdraw.html', context={'p':p, 'ww':ww})
 
+
+@onlyuser
 def leaderboard(request):
-    pass
+    return render(request, 'lead.html')
 
 
 def dashboard(request):
@@ -98,6 +103,8 @@ def handle_login(request):
         return redirect('/')
 
 
+
+@onlyuser
 def handle_logout(request):
     logout(request)
     return redirect(handle_login)
@@ -148,7 +155,7 @@ def handle_reg(request):
 
         return redirect(dashboard)
 
-
+@onlyuser
 @csrf_exempt
 def get_teams(request, username):
     if request.method == 'GET':
@@ -158,7 +165,7 @@ def get_teams(request, username):
             genon = gen
         p = Profile.objects.get(user__username=username)
         ref = Referral.objects.filter(referrer=p, generation=genon).order_by('-id')
-        paginator = Paginator(ref, 2)
+        paginator = Paginator(ref, 10)
         page_number = request.GET.get('page')
         ref = paginator.get_page(page_number)
         context = {'ref':ref, 'gen':genon, 'username':username}
