@@ -17,9 +17,10 @@ def home(request):
         'cats' : cats
     }
     return render(request, 'home.html', context=context)
-"""
+
+
 def active(request):
-    url = "https://sandbox.uddoktapay.com/api/checkout-v2"
+    url = "https://pay.csgroup.my.id/api/checkout-v2"
     payload = {
     "full_name": request.user.username,
     "email": request.user.email,
@@ -28,13 +29,13 @@ def active(request):
         "order_id": "16",
         "product_id": "5"
     },
-    "redirect_url": "http://127.0.0.1:8000/dashboard",
+    "redirect_url": "https://csgroup.my.id",
     "return_type": "GET",
-    "cancel_url": "localhost"
+    "cancel_url": "https://csgroup.my.id"
     }
     headers = {
     "accept": "application/json",
-    "RT-UDDOKTAPAY-API-KEY": "982d381360a69d419689740d9f2e26ce36fb7a50",
+    "RT-UDDOKTAPAY-API-KEY": "f1d5bd54b659a131aad3020f1bbcd15e5bd275d9",
     "content-type": "application/json"
     }
 
@@ -51,7 +52,7 @@ def active(request):
     p.is_verified = True
     p.save()
     return redirect(dashboard)
-
+"""
 def withdrawl(request):
     p = Profile.objects.get(user=request.user)
     ww = Withdraw.objects.filter(profile=p).order_by('-id')
@@ -63,7 +64,6 @@ def withdrawl(request):
             return JsonResponse({'message' : 'Withdraw amount should be less then balance'})
         w = Withdraw.objects.create(profile=p, amount=amount,method=method, status='pending')
         return redirect('/withdraw')
-
     return render(request, 'withdraw.html', context={'p':p, 'ww':ww})
 
 def leaderboard(request):

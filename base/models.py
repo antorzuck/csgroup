@@ -39,14 +39,14 @@ class Profile(models.Model):
 
     def total_refer_income(self):
         tf = Referral.objects.filter(referrer=self, generation=1).count()
-        return 50 * tf
+        return 40 * tf
 
     def total_gen_income(self):
         if self.balance == 0:
             return 00
         tf = Referral.objects.filter(referrer=self, generation=1).count()
-        refincome = tf * 50
-        return self.balance - 50
+        refincome = tf * 40
+        return self.balance - refincome
 
 
 class Withdraw(models.Model):
