@@ -25,7 +25,7 @@ def active(request):
     payload = {
     "full_name": request.user.username,
     "email": request.user.email,
-    "amount": "100",
+    "amount": "1",
     "metadata": {
         "order_id": "16",
         "product_id": "5"
