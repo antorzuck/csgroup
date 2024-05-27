@@ -82,7 +82,7 @@ def create_referral(sender, instance, created, **kwargs):
 
         reward = {
             1: 50, 2: 5, 3: 4, 4: 3, 5: 2,
-            6: 1, 7: 1
+            6: 2, 7: 1, 8: 1, 9: 1, 10: 1
         }
 
         generation = 1  # Initialize generation counter

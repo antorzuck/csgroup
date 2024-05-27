@@ -46,14 +46,30 @@ def active(request):
     xx = json.loads(response.text)
     return redirect(xx['payment_url'])
 
-"""
 
-def active(request):
-    p = Profile.objects.get(user=request.user)
-    p.is_verified = True
-    p.save()
-    return redirect(dashboard)
-"""
+def success(request):
+    if request.GET.get('invoice_id'):
+        url = "https://pay.csgroup.my.id/api/api/verify-payment"
+        payload = { "invoice_id": request.GET.get('invoice_id') }
+        headers = {
+        "accept": "application/json",
+        "RT-UDDOKTAPAY-API-KEY": "f1d5bd54b659a131aad3020f1bbcd15e5bd275d9",
+        "content-type": "application/json"
+        }
+        response = requests.post(url, json=payload, headers=headers)
+        print(response.text)
+        xx = json.loads(response.text)
+
+        stats = xx['status']
+
+        if stats == 'COMPLETE':
+            p = Profile.objects.get(user__username=xx['full_name'])
+            p.is_verified = True
+            p.shopping_balance = 100
+            p.save()
+            return redirect('/dashboard')
+        return redirect('/dashboard')
+
 
 @onlyuser
 def withdrawl(request):
@@ -72,7 +88,8 @@ def withdrawl(request):
 
 @onlyuser
 def leaderboard(request):
-    return render(request, 'lead.html')
+    p = Profile.objects.all().order_by('-balance')[0:10]
+    return render(request, 'lead.html', context={'p':p})
 
 
 def dashboard(request):
@@ -172,3 +189,5 @@ def get_teams(request, username):
         return render(request, 'team.html', context)
 
 
+def support(request):
+    return render(request, 'support.html')
