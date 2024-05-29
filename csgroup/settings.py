@@ -27,7 +27,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -38,7 +37,7 @@ MIDDLEWARE = [
 
 
     #cs group's custom middlewares
-    'base.cust_middleware.MaintenanceMiddleware',
+    #'base.cust_middleware.MaintenanceMiddleware',
 ]
 
 
@@ -111,7 +110,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-CORS_ALLOW_ALL_ORIGINS = True
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 

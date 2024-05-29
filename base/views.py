@@ -30,7 +30,7 @@ def active(request):
         "order_id": "16",
         "product_id": "5"
     },
-    "redirect_url": "https://csgroup.my.id",
+    "redirect_url": "https://csgroup.my.id/success",
     "return_type": "GET",
     "cancel_url": "https://csgroup.my.id"
     }
@@ -48,8 +48,11 @@ def active(request):
 
 
 def success(request):
+    print("success is runned")
+    request.GET.get('invoice_id')
     if request.GET.get('invoice_id'):
-        url = "https://pay.csgroup.my.id/api/api/verify-payment"
+        request.GET.get('invoice_id')
+        url = "https://pay.csgroup.my.id/api/verify-payment"
         payload = { "invoice_id": request.GET.get('invoice_id') }
         headers = {
         "accept": "application/json",
@@ -62,7 +65,7 @@ def success(request):
 
         stats = xx['status']
 
-        if stats == 'COMPLETE':
+        if stats == 'COMPLETED':
             p = Profile.objects.get(user__username=xx['full_name'])
             p.is_verified = True
             p.shopping_balance = 100
@@ -147,7 +150,7 @@ def handle_reg(request):
         pasword = data.get('password')
 
         c = User.objects.create_user(
-            username=username,
+            username=username.strip(),
             email=email,
             password=pasword
         )

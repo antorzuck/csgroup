@@ -1,0 +1,1760 @@
+Traceback (most recent call last):
+  File "/home/csgroup1/csgroup/passenger_wsgi.py", line 2, in <module>
+    import sy
+ModuleNotFoundError: No module named 'sy'
+Traceback (most recent call last):
+  File "/home/csgroup1/csgroup/passenger_wsgi.py", line 2, in <module>
+    import sy
+ModuleNotFoundError: No module named 'sy'
+[UID:1317][2594535] Child process with pid: 2594545 was killed by signal: 15, core dumped: no
+Traceback (most recent call last):
+  File "/home/csgroup1/csgroup/passenger_wsgi.py", line 2, in <module>
+    import sy
+ModuleNotFoundError: No module named 'sy'
+[UID:1317][2594535] Child process with pid: 2594561 was killed by signal: 15, core dumped: no
+Traceback (most recent call last):
+  File "/home/csgroup1/csgroup/passenger_wsgi.py", line 2, in <module>
+    import sy
+ModuleNotFoundError: No module named 'sy'
+[UID:1317][2594535] Child process with pid: 2594611 was killed by signal: 15, core dumped: no
+Traceback (most recent call last):
+  File "/home/csgroup1/csgroup/passenger_wsgi.py", line 3, in <module>
+    from csgroup.wsgi import application
+  File "/home/csgroup1/csgroup/csgroup/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    return WSGIHandler()
+           ^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/wsgi.py", line 118, in __init__
+    self.load_middleware()
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 40, in load_middleware
+    middleware = import_string(middleware_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/alt/python311/lib64/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'corsheaders'
+[UID:1317][2594535] Child process with pid: 2598077 was killed by signal: 15, core dumped: no
+Traceback (most recent call last):
+  File "/home/csgroup1/csgroup/passenger_wsgi.py", line 3, in <module>
+    from csgroup.wsgi import application
+  File "/home/csgroup1/csgroup/csgroup/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/wsgi.py", line 13, in get_wsgi_application
+    return WSGIHandler()
+           ^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/wsgi.py", line 118, in __init__
+    self.load_middleware()
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 40, in load_middleware
+    middleware = import_string(middleware_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/utils/module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/utils/module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/alt/python311/lib64/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'corsheaders'
+[UID:1317][2594535] Child process with pid: 2598150 was killed by signal: 15, core dumped: no
+Not Found: /favicon.ico
+None
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+
+cccccccccccccccccccccc777777777 testing
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+i just fenned
+opps Profile matching query does not exist.
+{"status":true,"message":"Payment Url","payment_url":"https:\/\/pay.csgroup.my.id\/payment\/b5f0920a81c4b6d0fb73c6614958ced0203b6129"}
+i just fenned
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Internal Server Error: /dashboard
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 97, in dashboard
+    pr = Profile.objects.get(user=request.user)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /dashboard
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 97, in dashboard
+    pr = Profile.objects.get(user=request.user)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /dashboard
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 97, in dashboard
+    pr = Profile.objects.get(user=request.user)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /dashboard
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 97, in dashboard
+    pr = Profile.objects.get(user=request.user)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /dashboard
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 97, in dashboard
+    pr = Profile.objects.get(user=request.user)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /dashboard
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 97, in dashboard
+    pr = Profile.objects.get(user=request.user)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /dashboard
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 97, in dashboard
+    pr = Profile.objects.get(user=request.user)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /dashboard
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 97, in dashboard
+    pr = Profile.objects.get(user=request.user)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Internal Server Error: /dashboard
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 97, in dashboard
+    pr = Profile.objects.get(user=request.user)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+None
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Internal Server Error: /dashboard
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 97, in dashboard
+    pr = Profile.objects.get(user=request.user)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Not Found: /favicon.ico
+Not Found: /lo
+Not Found: /lou
+Not Found: /log
+Not Found: /logou
+Not Found: /logo
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+i just fenned
+
+cccccccccccccccccccccc777777777 CSgroup
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+i just fenned
+opps Profile matching query does not exist.
+i just fenned
+CSgroup
+i just fenned
+i just fenned
+Not Found: /apple-touch-icon-precomposed.png
+Not Found: /apple-touch-icon.png
+Not Found: /favicon.ico
+{"status":true,"message":"Payment Url","payment_url":"https:\/\/pay.csgroup.my.id\/payment\/75cf2ae6da655effa433e2342c5be8d82ff27c13"}
+01712863623
+cccccccccccccccccccccc777777777 Lucky1
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+01712863623
+xxxxxxxxxxxxxxx
+yes
+i just fenned
+CSgroup
+01995185514
+cccccccccccccccccccccc777777777 Lucky2
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+01995185514
+xxxxxxxxxxxxxxx
+yes
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+CSgroup
+Not Found: /favicon.ico
+01779878732
+cccccccccccccccccccccc777777777 Lucky3
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+01779878732
+xxxxxxxxxxxxxxx
+yes
+i just fenned
+CSgroup
+Not Found: /favicon.ico
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+Forbidden (CSRF token from POST incorrect.): /signin
+Not Found: /favicon.ico
+01779878733
+cccccccccccccccccccccc777777777 Lucky4
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+01779878733
+xxxxxxxxxxxxxxx
+yes
+i just fenned
+CSgroup
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+CSgroup
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+CSgroup
+Not Found: /favicon.ico
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+01779878739
+cccccccccccccccccccccc777777777 Lucky10
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+01779878739
+xxxxxxxxxxxxxxx
+yes
+i just fenned
+CSgroup
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+01779878734
+cccccccccccccccccccccc777777777 Lucky5 
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+01779878734
+xxxxxxxxxxxxxxx
+yes
+i just fenned
+CSgroup
+01779878735
+cccccccccccccccccccccc777777777 Lucky6
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+01779878735
+xxxxxxxxxxxxxxx
+yes
+i just fenned
+01779878737
+cccccccccccccccccccccc777777777 Lucky8
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+01779878737
+xxxxxxxxxxxxxxx
+yes
+i just fenned
+Not Found: /favicon.ico
+01779878736
+cccccccccccccccccccccc777777777 Lucky7
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+01779878736
+xxxxxxxxxxxxxxx
+yes
+i just fenned
+01779878738
+cccccccccccccccccccccc777777777 Lucky9
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+01779878738
+xxxxxxxxxxxxxxx
+yes
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+i just fenned
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+
+cccccccccccccccccccccc777777777 antir
+ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+i just fenned
+opps Profile matching query does not exist.
+{"status":true,"message":"Payment Url","payment_url":"https:\/\/pay.csgroup.my.id\/payment\/0eb18d8c1b71200dd02d83660557407c289aefba"}
+{"status":true,"message":"Payment Url","payment_url":"https:\/\/pay.csgroup.my.id\/payment\/88b389d22b7a1e2a6b4170a96893b665df500ce3"}
+Internal Server Error: /teams/lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /teams/lucky6
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /teams/lucky4
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+i just fenned
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+{"status":true,"message":"Payment Url","payment_url":"https:\/\/pay.csgroup.my.id\/payment\/798392893d003bf7425d8bf35b1591d316c5678c"}
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+{"status":true,"message":"Payment Url","payment_url":"https:\/\/pay.csgroup.my.id\/payment\/4a966221472346815b0c04ef1bf49e0d81a83151"}
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Internal Server Error: /teams/Lucky5
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/decorators.py", line 10, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 183, in get_teams
+    p = Profile.objects.get(user__username=username)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+base.models.Profile.DoesNotExist: Profile matching query does not exist.
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+{"status":true,"message":"Payment Url","payment_url":"https:\/\/pay.csgroup.my.id\/payment\/1c512ac9230b5b36cb8899bb6bde650cd76edb14"}
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+{"status":true,"message":"Payment Url","payment_url":"https:\/\/pay.csgroup.my.id\/payment\/ed6620a640dd90b066c1589973a765001c21582f"}
+success is runned
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+
+        *, *:after, *:before {
+        box-sizing: border-box;
+        }
+
+        body {
+        text-align: center;
+        background: #03a9f4;
+        }
+
+        .conatiner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 900px;
+        }
+
+        .circle {
+        border-radius: 50%;
+        padding: 0;
+        display: inline-block;
+        position: relative;
+        height: 375px;
+        }
+        .circle:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 40px solid #fffbdf;
+        z-index: 50;
+        border-radius: 50%;
+        }
+
+        .holder {
+        overflow: hidden;
+        width: 366px;
+        height: 345px;
+        border-radius: 50%;
+        position: relative;
+        }
+
+        .bob {
+        position: absolute;
+        display: inline-block;
+        left: 50%;
+        z-index: 10;
+        transform: translateX(-50%);
+        -webkit-animation: 2s updown ease-in infinite;
+        animation: 2s updown ease-in infinite;
+        top: 100%;
+        }
+        .bob .nose {
+        position: relative;
+        background: #fdd5b6;
+        border: 3px solid #602f2d;
+        margin: 0 auto;
+        height: 35px;
+        width: 35px;
+        z-index: 15;
+        border-radius: 50% 50% 0 0;
+        top: 8px;
+        }
+        .bob .nose:after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 12px;
+        height: 7px;
+        width: 7px;
+        border-radius: 50%;
+        background: #602f2d;
+        box-shadow: 13px 0 #602f2d;
+        }
+        .bob .face {
+        width: 200px;
+        height: 200px;
+        background: #fdd5b6;
+        border: 3px solid #602f2d;
+        border-radius: 50%;
+        position: relative;
+        z-index: 50;
+        box-shadow: 15px 0 #f7c6a4 inset;
+        }
+        .bob .ear {
+        position: absolute;
+        background: #fdd5b6;
+        border: 3px solid #602f2d;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        z-index: 15;
+        top: 115px;
+        left: -5px;
+        }
+        .bob .ear:after, .bob .ear:before {
+        content: '';
+        position: absolute;
+        background: #602f2d;
+        border-radius: 15px;
+        height: 3px;
+        width: 20px;
+        top: 12px;
+        left: 5px;
+        }
+        .bob .ear:after {
+        transform: rotate(127deg);
+        width: 7px;
+        top: 15px;
+        left: 7px;
+        }
+        .bob .ear.rgt {
+        left: auto;
+        right: -5px;
+        }
+        .bob .ear.rgt:after {
+        transform: rotate(47deg);
+        top: 15px;
+        left: 18px;
+        }
+        .bob .neck {
+        position: relative;
+        background: #fdd5b6;
+        border: 3px solid #602f2d;
+        margin: 0 auto 0;
+        height: 50px;
+        width: 70px;
+        z-index: 15;
+        border-radius: 0 0 50% 50%;
+        top: -8px;
+        box-shadow: 10px 0 #f7c6a4 inset;
+        }
+        .bob .mouth {
+        position: absolute;
+        border: 3px solid #602f2d;
+        background: #ec7374;
+        width: 80%;
+        height: 80%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 50%;
+        overflow: hidden;
+        -webkit-animation: 1s openclose ease-in infinite;
+        animation: 1s openclose ease-in infinite;
+        }
+        .bob .mouth:after, .bob .mouth:before {
+        content: '';
+        position: absolute;
+        background: #cc5e64;
+        border: 5px solid #df6062;
+        border-radius: 50%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 120px;
+        height: 120px;
+        z-index: 2;
+        }
+        .bob .mouth:after {
+        z-index: 10;
+        bottom: auto;
+        top: 25px;
+        background: #ec7374;
+        height: 40px;
+        width: 40px;
+        border-top-color: transparent;
+        }
+        .bob .tongue {
+        position: absolute;
+        background: #602f2d;
+        width: 40px;
+        height: 40px;
+        left: 0;
+        bottom: 5px;
+        right: 0;
+        margin: auto;
+        border-radius: 50%;
+        z-index: 5;
+        }
+        .bob .tongue:after, .bob .tongue:before {
+        content: '';
+        position: absolute;
+        background: #f9adba;
+        border: 3px solid #602f2d;
+        border-radius: 50px;
+        top: 22px;
+        left: -4px;
+        width: 30px;
+        height: 40px;
+        z-index: 2;
+        }
+        .bob .tongue:before {
+        left: 16px;
+        }
+
+        .drops {
+        background: #8ecbf9;
+        border: 2px solid #602f2d;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px 50px 0 50px;
+        position: absolute;
+        transform: rotate(-15deg);
+        top: 150px;
+        left: 70px;
+        z-index: 100;
+        -webkit-animation: 2s drop-l ease-in infinite;
+        animation: 2s drop-l ease-in infinite;
+        }
+        .drops:nth-child(2) {
+        left: auto;
+        right: 70px;
+        transform: rotate(145deg);
+        -webkit-animation: 2s drop-r ease-in infinite;
+        animation: 2s drop-r ease-in infinite;
+        }
+        .drops:after, .drops:before {
+        content: '';
+        background: #8ecbf9;
+        border: 2px solid #602f2d;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px 50px 0 50px;
+        position: absolute;
+        transform: rotate(-15deg);
+        top: 20px;
+        left: -25px;
+        }
+        .drops:before {
+        top: -30px;
+        left: 0px;
+        }
+
+        .hand {
+        border: 3px solid #602f2d;
+        position: absolute;
+        z-index: 50;
+        background: #fdd5b6;
+        width: 25px;
+        height: 15px;
+        border-radius: 20px;
+        bottom: 86px;
+        z-index: 200;
+        left: 64px;
+        transform: rotate(-36deg);
+        }
+        .hand:after, .hand:before {
+        content: '';
+        border: 3px solid #602f2d;
+        position: absolute;
+        z-index: 50;
+        background: #fdd5b6;
+        width: 25px;
+        height: 15px;
+        border-radius: 20px;
+        z-index: 200;
+        top: 100%;
+        left: 0;
+        }
+        .hand:before {
+        top: 200%;
+        }
+
+        .rgt {
+        left: auto;
+        right: 60px;
+        bottom: 96px;
+        transform: rotate(50deg);
+        }
+
+        .numer {
+        font-size: 500px;
+        display: inline-block;
+        color: #fffbdf;
+        }
+        @-webkit-keyframes updown {
+        50% , 70% {
+            top: 25%;
+        }
+        }
+        @keyframes updown {
+        50% , 70% {
+            top: 25%;
+        }
+        }
+        @-webkit-keyframes openclose {
+        0% , 100% {
+            transform: scale(0.95, 0.95);
+        }
+        50% {
+            transform: scale(1.1, 1.1);
+        }
+        }
+        @keyframes openclose {
+        0% , 100% {
+            transform: scale(0.95, 0.95);
+        }
+        50% {
+            transform: scale(1.1, 1.1);
+        }
+        }
+        @-webkit-keyframes drop-l {
+        0% , 50% {
+            opacity: 0;
+            transform: translate(50px, 0) rotate(-15deg);
+        }
+        55% {
+            opacity: 1;
+            transform: translate(0, 0) rotate(-15deg);
+        }
+        70% {
+            opacity: 1;
+            transform: translate(-30px, 0) rotate(-25deg);
+        }
+        85% {
+            opacity: 1;
+            transform: translate(-50px, 100px) rotate(-90deg);
+            opacity: .5;
+        }
+        86% , 100% {
+            opacity: 0;
+        }
+        }
+        @keyframes drop-l {
+        0% , 50% {
+            opacity: 0;
+            transform: translate(50px, 0) rotate(-15deg);
+        }
+        55% {
+            opacity: 1;
+            transform: translate(0, 0) rotate(-15deg);
+        }
+        70% {
+            opacity: 1;
+            transform: translate(-30px, 0) rotate(-25deg);
+        }
+        85% {
+            opacity: 1;
+            transform: translate(-50px, 100px) rotate(-90deg);
+            opacity: .5;
+        }
+        86% , 100% {
+            opacity: 0;
+        }
+        }
+        @-webkit-keyframes drop-r {
+        0% , 50% {
+            opacity: 0;
+            transform: translate(-50px, 0) rotate(145deg);
+        }
+        55% {
+            opacity: 1;
+            transform: translate(0, 0) rotate(145deg);
+        }
+        70% {
+            opacity: 1;
+            transform: translate(30px, 0) rotate(160deg);
+        }
+        85% {
+            opacity: 1;
+            transform: translate(50px, 100px) rotate(180deg);
+            opacity: .5;
+        }
+        86% , 100% {
+            opacity: 0;
+        }
+        }
+        @keyframes drop-r {
+        0% , 50% {
+            opacity: 0;
+            transform: translate(-50px, 0) rotate(145deg);
+        }
+        55% {
+            opacity: 1;
+            transform: translate(0, 0) rotate(145deg);
+        }
+        70% {
+            opacity: 1;
+            transform: translate(30px, 0) rotate(160deg);
+        }
+        85% {
+            opacity: 1;
+            transform: translate(50px, 100px) rotate(180deg);
+            opacity: .5;
+        }
+        86% , 100% {
+            opacity: 0;
+        }
+        }
+    </style>
+</head>
+<body>
+<div class="conatiner"><span class="numer">4</span>
+  <div class="circle">
+    <div class="drops"></div>
+    <div class="drops"></div>
+    <div class="hand"></div>
+    <div class="hand rgt"></div>
+    <div class="holder">
+      <div class="bob">
+        <div class="nose"></div>
+        <div class="face">
+          <div class="mouth">
+            <div class="tongue"></div>
+          </div>
+        </div>
+        <div class="ear"></div>
+        <div class="ear rgt"></div>
+        <div class="neck"></div>
+      </div>
+    </div>
+  </div><span class="numer">4</span>
+</div>
+</body>
+</html>Internal Server Error: /success
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 64, in success
+    xx = json.loads(response.text)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/alt/python311/lib64/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/alt/python311/lib64/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/alt/python311/lib64/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+Not Found: /favicon.ico
+
+success is runned
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+
+        *, *:after, *:before {
+        box-sizing: border-box;
+        }
+
+        body {
+        text-align: center;
+        background: #03a9f4;
+        }
+
+        .conatiner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 900px;
+        }
+
+        .circle {
+        border-radius: 50%;
+        padding: 0;
+        display: inline-block;
+        position: relative;
+        height: 375px;
+        }
+        .circle:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 40px solid #fffbdf;
+        z-index: 50;
+        border-radius: 50%;
+        }
+
+        .holder {
+        overflow: hidden;
+        width: 366px;
+        height: 345px;
+        border-radius: 50%;
+        position: relative;
+        }
+
+        .bob {
+        position: absolute;
+        display: inline-block;
+        left: 50%;
+        z-index: 10;
+        transform: translateX(-50%);
+        -webkit-animation: 2s updown ease-in infinite;
+        animation: 2s updown ease-in infinite;
+        top: 100%;
+        }
+        .bob .nose {
+        position: relative;
+        background: #fdd5b6;
+        border: 3px solid #602f2d;
+        margin: 0 auto;
+        height: 35px;
+        width: 35px;
+        z-index: 15;
+        border-radius: 50% 50% 0 0;
+        top: 8px;
+        }
+        .bob .nose:after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 12px;
+        height: 7px;
+        width: 7px;
+        border-radius: 50%;
+        background: #602f2d;
+        box-shadow: 13px 0 #602f2d;
+        }
+        .bob .face {
+        width: 200px;
+        height: 200px;
+        background: #fdd5b6;
+        border: 3px solid #602f2d;
+        border-radius: 50%;
+        position: relative;
+        z-index: 50;
+        box-shadow: 15px 0 #f7c6a4 inset;
+        }
+        .bob .ear {
+        position: absolute;
+        background: #fdd5b6;
+        border: 3px solid #602f2d;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        z-index: 15;
+        top: 115px;
+        left: -5px;
+        }
+        .bob .ear:after, .bob .ear:before {
+        content: '';
+        position: absolute;
+        background: #602f2d;
+        border-radius: 15px;
+        height: 3px;
+        width: 20px;
+        top: 12px;
+        left: 5px;
+        }
+        .bob .ear:after {
+        transform: rotate(127deg);
+        width: 7px;
+        top: 15px;
+        left: 7px;
+        }
+        .bob .ear.rgt {
+        left: auto;
+        right: -5px;
+        }
+        .bob .ear.rgt:after {
+        transform: rotate(47deg);
+        top: 15px;
+        left: 18px;
+        }
+        .bob .neck {
+        position: relative;
+        background: #fdd5b6;
+        border: 3px solid #602f2d;
+        margin: 0 auto 0;
+        height: 50px;
+        width: 70px;
+        z-index: 15;
+        border-radius: 0 0 50% 50%;
+        top: -8px;
+        box-shadow: 10px 0 #f7c6a4 inset;
+        }
+        .bob .mouth {
+        position: absolute;
+        border: 3px solid #602f2d;
+        background: #ec7374;
+        width: 80%;
+        height: 80%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 50%;
+        overflow: hidden;
+        -webkit-animation: 1s openclose ease-in infinite;
+        animation: 1s openclose ease-in infinite;
+        }
+        .bob .mouth:after, .bob .mouth:before {
+        content: '';
+        position: absolute;
+        background: #cc5e64;
+        border: 5px solid #df6062;
+        border-radius: 50%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 120px;
+        height: 120px;
+        z-index: 2;
+        }
+        .bob .mouth:after {
+        z-index: 10;
+        bottom: auto;
+        top: 25px;
+        background: #ec7374;
+        height: 40px;
+        width: 40px;
+        border-top-color: transparent;
+        }
+        .bob .tongue {
+        position: absolute;
+        background: #602f2d;
+        width: 40px;
+        height: 40px;
+        left: 0;
+        bottom: 5px;
+        right: 0;
+        margin: auto;
+        border-radius: 50%;
+        z-index: 5;
+        }
+        .bob .tongue:after, .bob .tongue:before {
+        content: '';
+        position: absolute;
+        background: #f9adba;
+        border: 3px solid #602f2d;
+        border-radius: 50px;
+        top: 22px;
+        left: -4px;
+        width: 30px;
+        height: 40px;
+        z-index: 2;
+        }
+        .bob .tongue:before {
+        left: 16px;
+        }
+
+        .drops {
+        background: #8ecbf9;
+        border: 2px solid #602f2d;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px 50px 0 50px;
+        position: absolute;
+        transform: rotate(-15deg);
+        top: 150px;
+        left: 70px;
+        z-index: 100;
+        -webkit-animation: 2s drop-l ease-in infinite;
+        animation: 2s drop-l ease-in infinite;
+        }
+        .drops:nth-child(2) {
+        left: auto;
+        right: 70px;
+        transform: rotate(145deg);
+        -webkit-animation: 2s drop-r ease-in infinite;
+        animation: 2s drop-r ease-in infinite;
+        }
+        .drops:after, .drops:before {
+        content: '';
+        background: #8ecbf9;
+        border: 2px solid #602f2d;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px 50px 0 50px;
+        position: absolute;
+        transform: rotate(-15deg);
+        top: 20px;
+        left: -25px;
+        }
+        .drops:before {
+        top: -30px;
+        left: 0px;
+        }
+
+        .hand {
+        border: 3px solid #602f2d;
+        position: absolute;
+        z-index: 50;
+        background: #fdd5b6;
+        width: 25px;
+        height: 15px;
+        border-radius: 20px;
+        bottom: 86px;
+        z-index: 200;
+        left: 64px;
+        transform: rotate(-36deg);
+        }
+        .hand:after, .hand:before {
+        content: '';
+        border: 3px solid #602f2d;
+        position: absolute;
+        z-index: 50;
+        background: #fdd5b6;
+        width: 25px;
+        height: 15px;
+        border-radius: 20px;
+        z-index: 200;
+        top: 100%;
+        left: 0;
+        }
+        .hand:before {
+        top: 200%;
+        }
+
+        .rgt {
+        left: auto;
+        right: 60px;
+        bottom: 96px;
+        transform: rotate(50deg);
+        }
+
+        .numer {
+        font-size: 500px;
+        display: inline-block;
+        color: #fffbdf;
+        }
+        @-webkit-keyframes updown {
+        50% , 70% {
+            top: 25%;
+        }
+        }
+        @keyframes updown {
+        50% , 70% {
+            top: 25%;
+        }
+        }
+        @-webkit-keyframes openclose {
+        0% , 100% {
+            transform: scale(0.95, 0.95);
+        }
+        50% {
+            transform: scale(1.1, 1.1);
+        }
+        }
+        @keyframes openclose {
+        0% , 100% {
+            transform: scale(0.95, 0.95);
+        }
+        50% {
+            transform: scale(1.1, 1.1);
+        }
+        }
+        @-webkit-keyframes drop-l {
+        0% , 50% {
+            opacity: 0;
+            transform: translate(50px, 0) rotate(-15deg);
+        }
+        55% {
+            opacity: 1;
+            transform: translate(0, 0) rotate(-15deg);
+        }
+        70% {
+            opacity: 1;
+            transform: translate(-30px, 0) rotate(-25deg);
+        }
+        85% {
+            opacity: 1;
+            transform: translate(-50px, 100px) rotate(-90deg);
+            opacity: .5;
+        }
+        86% , 100% {
+            opacity: 0;
+        }
+        }
+        @keyframes drop-l {
+        0% , 50% {
+            opacity: 0;
+            transform: translate(50px, 0) rotate(-15deg);
+        }
+        55% {
+            opacity: 1;
+            transform: translate(0, 0) rotate(-15deg);
+        }
+        70% {
+            opacity: 1;
+            transform: translate(-30px, 0) rotate(-25deg);
+        }
+        85% {
+            opacity: 1;
+            transform: translate(-50px, 100px) rotate(-90deg);
+            opacity: .5;
+        }
+        86% , 100% {
+            opacity: 0;
+        }
+        }
+        @-webkit-keyframes drop-r {
+        0% , 50% {
+            opacity: 0;
+            transform: translate(-50px, 0) rotate(145deg);
+        }
+        55% {
+            opacity: 1;
+            transform: translate(0, 0) rotate(145deg);
+        }
+        70% {
+            opacity: 1;
+            transform: translate(30px, 0) rotate(160deg);
+        }
+        85% {
+            opacity: 1;
+            transform: translate(50px, 100px) rotate(180deg);
+            opacity: .5;
+        }
+        86% , 100% {
+            opacity: 0;
+        }
+        }
+        @keyframes drop-r {
+        0% , 50% {
+            opacity: 0;
+            transform: translate(-50px, 0) rotate(145deg);
+        }
+        55% {
+            opacity: 1;
+            transform: translate(0, 0) rotate(145deg);
+        }
+        70% {
+            opacity: 1;
+            transform: translate(30px, 0) rotate(160deg);
+        }
+        85% {
+            opacity: 1;
+            transform: translate(50px, 100px) rotate(180deg);
+            opacity: .5;
+        }
+        86% , 100% {
+            opacity: 0;
+        }
+        }
+    </style>
+</head>
+<body>
+<div class="conatiner"><span class="numer">4</span>
+  <div class="circle">
+    <div class="drops"></div>
+    <div class="drops"></div>
+    <div class="hand"></div>
+    <div class="hand rgt"></div>
+    <div class="holder">
+      <div class="bob">
+        <div class="nose"></div>
+        <div class="face">
+          <div class="mouth">
+            <div class="tongue"></div>
+          </div>
+        </div>
+        <div class="ear"></div>
+        <div class="ear rgt"></div>
+        <div class="neck"></div>
+      </div>
+    </div>
+  </div><span class="numer">4</span>
+</div>
+</body>
+</html>Internal Server Error: /success
+Traceback (most recent call last):
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/virtualenv/csgroup/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/csgroup1/csgroup/base/views.py", line 64, in success
+    xx = json.loads(response.text)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/alt/python311/lib64/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/alt/python311/lib64/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/alt/python311/lib64/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 1 (char 1)
+
+success is runned
+{"full_name":"antir","email":"gahha@gmail.com","amount":"1.00","fee":"0.00","charged_amount":"1.00","invoice_id":"oGdldNf64u76XxjSKQX6","metadata":{"order_id":"16","product_id":"5"},"payment_method":"bkash","sender_number":"01558687790","transaction_id":"BET7QX6KY3","date":"2024-05-29 13:16:46","status":"COMPLETED"}
+Not Found: /favicon.ico
+success is runned
+{"full_name":"antir","email":"gahha@gmail.com","amount":"1.00","fee":"0.00","charged_amount":"1.00","invoice_id":"oGdldNf64u76XxjSKQX6","metadata":{"order_id":"16","product_id":"5"},"payment_method":"bkash","sender_number":"01558687790","transaction_id":"BET7QX6KY3","date":"2024-05-29 13:16:46","status":"COMPLETED"}
+i just fenned
+Not Found: /favicon.ico
+Not Found: /favicon.ico

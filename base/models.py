@@ -87,7 +87,7 @@ def create_referral(sender, instance, created, **kwargs):
 
         generation = 1  # Initialize generation counter
 
-        while referrer_user and generation <= 7:
+        while referrer_user and generation <= 10:
             try:
                 referrer_profile = Profile.objects.get(user=referrer_user)
             except Profile.DoesNotExist:
