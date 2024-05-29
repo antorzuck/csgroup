@@ -59,7 +59,7 @@
  
  
  <div class="gap-1 text-white flex items-center">
-   
+   {% if not request.user.is_authenticated %}
    <a href="/register">
    <button class="md:hidden rounded-md p-2 bg-gradient-to-r from-cyan-500 to-blue-500"  type="submit">Register
    
@@ -70,8 +70,13 @@
          </button>
        
  </a>
-   
- 
+
+{% else %}
+   <a href="/dashboard">
+   <button class="md:hidden rounded-md p-2 bg-gradient-to-r from-cyan-500 to-blue-500"  type="submit">Dashboard
+   </button>
+ </a>
+ {% endif %}
     <div id="burger" onclick="burger()" class="hover:ring bg-cyan-700 rounded-lg md:hidden px-2 pt-2 burger">
      <box-icon color="white" name="menu-alt-right"></box-icon>
     </div>
@@ -80,7 +85,7 @@
     
     
      <ul class="hidden md:block text-white md:flex items-center justify-center gap-2">
-       
+       {% if not request.user.is_authenticated %}
        <li class="">
          <a href="/register">
          <button class="rounded-md p-2 bg-gradient-to-r from-cyan-500 to-blue-500" type="submit">Register
@@ -98,11 +103,17 @@
                  </button>
                </a>
                </li>
+       {% else %}
        
-       
-       
+       <li class="">
+         <a href="/rdashboard">
+         <button class="rounded-md p-2 bg-gradient-to-r from-cyan-500 to-blue-500" type="submit">Dashboard
+
+         </button>
+       </a>
+       </li>
     
-      
+      {% endif %}
       
     </ul>
     
@@ -131,6 +142,34 @@
  
   {% block body %}
   {% endblock %}
+
+
+
+
+
+<footer class="bg-cyan-800 bottom-0 w-full shadow mt-4 dark:bg-gray-800">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-100 sm:text-center dark:text-gray-400">© 2023 <a href="https://csgroup.my.id/" class="hover:underline">CS Group™</a>. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-100 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="#" class="hover:underline me-4 md:me-6">About</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline">Contact</a>
+        </li>
+    </ul>
+    </div>
+</footer>
+
+
+
  
  
  <script>
