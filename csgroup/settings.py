@@ -37,7 +37,7 @@ MIDDLEWARE = [
 
 
     #cs group's custom middlewares
-    #'base.cust_middleware.MaintenanceMiddleware',
+    'base.cust_middleware.MaintenanceMiddleware',
 ]
 
 
@@ -128,3 +128,21 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+#send mail credetntials
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'antorzuck@gmail.com'
+EMAIL_HOST_PASSWORD = 'pgqi ienc ajms zxoy'
+DEFAULT_FROM_EMAIL = 'antorzuck@gmail.com'
+
+
+
+

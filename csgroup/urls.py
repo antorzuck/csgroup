@@ -16,6 +16,9 @@ urlpatterns = [
     path('leaderboard', leaderboard),
     path('support', support),
     path('success', success),
+    path('forget-password', reset_email),
+    path('reset-code', reset_code),
+    path('change-password', change_password),
     path('teams/<str:username>', get_teams)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

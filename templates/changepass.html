@@ -1,0 +1,47 @@
+{% extends 'dash.html' %}
+
+{% block body %}
+
+
+<section class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        
+        {% if error %}
+        
+        <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+  <span class="font-medium">Oops!</span> {{error}}
+</div>
+ {% endif %}
+ 
+     {% if suc %}
+ 
+ <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+  <span class="font-medium">Congrats!</span> {{suc}}
+</div>
+         {% endif %}
+        
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Change Password</h2>
+        <form action='/change-password' method='POST'>
+            
+            {% csrf_token %}
+
+            <div class="mb-4">
+                <label for="new-password" class="block text-gray-700 font-bold mb-2">New Password</label>
+                <input type="password" id="new-password" name="new-password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-4">
+                <label for="confirm-password" class="block text-gray-700 font-bold mb-2">Confirm New Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="w-full bg-cyan-700 hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Change Password</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

@@ -4,13 +4,15 @@
 {% block body %}
 
     <div class="container mx-auto p-4">
+   <div class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300" role="alert">
+    A fee of 5% will be deducted from each withdrawal transaction.</div>
         <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-semibold mb-6">Withdraw Payment</h2>
 
-            {% if p.balance < 120 %}
+            {% if p.balance < 100 %}
 
             <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50" role="alert">
-                <span class="font-medium">Hey!</span> You can withdraw your money when you balance is 120 taka or more.
+                <span class="font-medium">Hey!</span> You can withdraw your money when your balance is 100 taka or more.
               </div>
 
               {% else %}
@@ -25,9 +27,20 @@
                     <select id="method" name="method" class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <option selected disabled>Select method</option>
                         <option value="bkash">Bkash</option>
+                      
                         <option value="nagad">Nagad</option>
+                        <option value="rocket">Rocket</option>
                     </select>
                 </div>
+                
+                <div>
+                    <label for="number" class="block text-sm font-medium text-gray-700">Bkash/Nagad Number</label>
+                    <input type="number" id="number" name="number" min="1" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter bkash/nagad number">
+                </div>
+                
+                
+                
+                
                 <div>
                     <button type="submit" class="w-full py-2 px-4 bg-cyan-700 text-white font-semibold rounded-md shadow-md hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">Withdraw</button>
                 </div>
@@ -63,7 +76,7 @@
                             <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">reject</span>
                             {% endif %}
                         </td>
-                        <td class="py-2 px-4 border-b border-gray-200 text-sm">{{p.number}}</td>
+                        <td class="py-2 px-4 border-b border-gray-200 text-sm">{{w.number}}</td>
                     </tr>
                     {% endfor %}
                     <!-- Add more rows as needed -->

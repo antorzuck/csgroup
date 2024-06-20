@@ -26,34 +26,86 @@ class Profile(models.Model):
     shopping_balance = models.IntegerField(default=0)
     refer_link = models.CharField(max_length=100)
     is_verified = models.BooleanField(default=False)
+    reset_code = models.CharField(max_length=100, null=True, blank=True)
     referred_by = models.ForeignKey(User, related_name='teams', null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.number
+        return str(self.user.username)
 
     def total_refer(self):
         return Referral.objects.filter(referrer=self, generation=1).count()
 
     def total_team(self):
         return Referral.objects.filter(referrer=self).count()
-
+        
+    def totalwithdraw(self):
+        w = Withdraw.objects.filter(profile=self)
+        money = sum([i.amount for i in w])
+        
+        print(money)
+        return money
+        
+        
+    
     def total_refer_income(self):
         tf = Referral.objects.filter(referrer=self, generation=1).count()
         return 40 * tf
 
+
     def total_gen_income(self):
+      
+        referrals = Referral.objects.filter(referrer=self, generation__lte=10)
+        generation_counts = {i: 0 for i in range(1, 11)}
+        
+        for referral in referrals:
+            generation_counts[referral.generation] += 1
+        
+        multipliers = {
+            1: 10,
+            2: 5,
+            3: 4,
+            4: 3,
+            5: 2,
+            6: 2,
+            7: 1,
+            8: 1,
+            9: 1,
+            10: 1,
+                }
+        sums = sum(generation_counts[g] * multipliers[g] for g in generation_counts)
+
+        return sums
+        
+    def lti(self):
         if self.balance == 0:
             return 00
-        tf = Referral.objects.filter(referrer=self, generation=1).count()
-        refincome = tf * 40
-        return self.balance - refincome
-
+        referrals = Referral.objects.filter(referrer=self, generation__lte=10)
+        generation_counts = {i: 0 for i in range(1, 11)}
+        
+        for referral in referrals:
+            generation_counts[referral.generation] += 1
+        
+        multipliers = {
+            1: 50,
+            2: 5,
+            3: 4,
+            4: 3,
+            5: 2,
+            6: 2,
+            7: 1,
+            8: 1,
+            9: 1,
+            10: 1,
+                }
+        sums = sum(generation_counts[g] * multipliers[g] for g in generation_counts)
+        return sums
 
 class Withdraw(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     amount = models.IntegerField(default=0)
     method = models.CharField(max_length=100)
     status = models.CharField(max_length=100)
+    number = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

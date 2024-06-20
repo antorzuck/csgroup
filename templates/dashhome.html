@@ -20,11 +20,25 @@
             <p class="text-2xl text-gray-900">100</p>
         </div>
 
-        <div class="bg-orange-300 card p-3 rounded-md shadow flex flex-col items-center justify-center">
-            <h2 class="text-gray-600 text-md">Total Earnings</h2>
-            <p class="text-2xl text-gray-900">{{p.balance}}</p>
+        <div class="bg-orange-300 card p-3 rounded-md shadow flex flex-col items-center justify-center   bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 animate-gradient">
+            <h2 class="text-white text-md">Your Balance</h2>
+            <p class="text-2xl text-white font-bold">{{p.balance}}</p>
+        </div>
+        
+        
+        
+        <div class="bg-indigo-300 card p-3 rounded-md shadow flex flex-col items-center justify-center">
+            <h2 class="text-gray-600 text-md">Total earnings</h2>
+            <p class="text-2xl text-gray-900">{{p.lti}}</p>
+        </div>
+        
+                
+                <div class="bg-indigo-300 card p-3 rounded-md shadow flex flex-col items-center justify-center">
+            <h2 class="text-gray-600 text-md">Total withdraw</h2>
+            <p class="text-2xl text-gray-900">{{p.totalwithdraw}}</p>
         </div>
 
+        
 
 
 

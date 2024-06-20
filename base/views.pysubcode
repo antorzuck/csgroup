@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from base.models import *
-from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+from django.contrib.auth import authenticate, login, logout
 import random
 from django.http import JsonResponse
 import requests
@@ -120,11 +120,12 @@ def handle_login(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        ath = authenticate(username=username.strip(), password=password.strip())
+        ath = authenticate(username=username,password=password)
+        print(ath)
         if ath is not None:
             login(request, ath)
             return redirect(dashboard)
-        return render(request, 'login.html', context={'error': 'No user found!'})
+        return redirect('/')
 
 
 
@@ -168,7 +169,7 @@ def handle_reg(request):
         c = User.objects.create_user(
             username=username.strip(),
             email=email,
-            password=pasword.strip()
+            password=pasword
         )
         c.save()
  
@@ -212,7 +213,6 @@ def support(request):
     
 
 def reset_email(request):
-
     if request.method == 'POST':
         email = request.POST.get('email')
         try:
@@ -226,42 +226,23 @@ def reset_email(request):
             from_email = settings.DEFAULT_FROM_EMAIL
             recipient_list = [email]
             send_mail(subject, message, from_email, recipient_list)
-            return redirect('/reset-code')
+            return render(request, 'subcode.html')
         except Exception as e:
             print("mailing error bro", e)
             print(e)
             return render(request, 'forgot.html', context={'error' : 'No user found with this mail bro.'})
             
     return render(request, 'forgot.html')
-    
+
+
 def reset_code(request):
     if request.method == 'POST':
         thefuckingcode = request.POST.get('reset-code')
-        try:
-            pr = Profile.objects.get(reset_code=thefuckingcode)
-            pr.reset_code = ''
-            pr.save()
-            login(request, pr.user)
-            return redirect('/change-password')
-        except:
-            return render(request, 'subcode.html', context={'error': 'sorry wrong code. check you email again.'})
-    return render(request, 'subcode.html')
-
-@onlyuser
-def change_password(request):
-    if request.method == 'POST':
-        new = request.POST.get('new-password')
-        confirm = request.POST.get('confirm-password')
-        
-        if new != confirm:
-            return render(request, 'changepass.html', context={'error': 'Both password are not matched. try again'})
-        u = User.objects.get(username=request.user.username)
-        u.set_password(new)
-        u.save()
-        update_session_auth_hash(request, u)
-        return render(request, 'changepass.html', context={'suc': 'Password changed sucessfully.'})
-    return render(request, 'changepass.html')
-
+        pr = Profile.objects.get(reset_code=thefuckingcode)
+        pr.reset_code = ''
+        pr.save()
+        login(request, pr.user)
+        return redirect('/dashboard/change-password')
             
 
     
