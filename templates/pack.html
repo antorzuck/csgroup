@@ -1,0 +1,64 @@
+{% extends 'dash.html' %}
+
+
+
+{% block body %}
+
+<section class="bg-gray-100 flex items-center justify-center min-h-screen">
+    
+    
+
+    <div class="container mx-auto p-8">
+        
+        {% if msg %}
+        <div class="mb-5 p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50" role="alert">
+  <span class="font-medium">Error! </span> {{msg}}
+</div>
+        {% endif %}
+        
+        
+        
+        <h1 class="text-3xl font-bold text-center mb-8">Choose a funding package</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+{% for p in pg %}
+
+
+
+            <div class="card bg-white shadow-md rounded-lg p-6">
+                <div class="flex items-center justify-center mb-4">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/like.png" alt="User Icon" class="h-12 w-12">
+                </div>
+                <h2 class=" text-xl font-semibold mb-2 text-center">{{p.name}}</h2>
+                <p class="text-gray-600 text-center">This package price is {{p.price}} taka only.</p>
+                
+                
+                <div class="btns flex flex-col items-center justify-around gap-1">
+                
+                <a name="btn" value="withbal" class="py-3 rounded-md text-white px-4 bg-pink-500" href="/createfund/{{p.name}}?active=balance">
+                Active with Balance
+                </a>
+                
+                
+                
+                <a name="btn" value="withbkash" class="py-3 rounded-md text-white px-4 bg-blue-500" href="/createfund/{{p.name}}?active=bkash">
+                Active with Bkash
+                </a>
+                
+                
+                
+                
+                </div>
+                
+                
+                
+            </div>
+        
+{% endfor %}
+            
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

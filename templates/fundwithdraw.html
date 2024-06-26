@@ -9,14 +9,14 @@
         <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
             <h2 class="text-2xl font-semibold mb-6">Withdraw Payment</h2>
 
-            {% if p.balance < 100 %}
+            {% if pr.balance < 100 %}
 
             <div class="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50" role="alert">
                 <span class="font-medium">Hey!</span> You can withdraw your money when your balance is 100 taka or more.
               </div>
 
               {% else %}
-            <form method="POST" action="/withdraw" class="space-y-4">
+            <form method="POST" action="/fund-withdraw" class="space-y-4">
                {% csrf_token %}
                 <div>
                     <label for="amount" class="block text-sm font-medium text-gray-700">Amount</label>
@@ -66,15 +66,13 @@
                         <td class="py-2 px-4 border-b border-gray-200 text-sm">{{w.amount}}</td>
                         <td class="py-2 px-4 border-b border-gray-200 text-sm">{{w.method}}</td>
                         <td class="py-2 px-4 border-b border-gray-200 text-sm">
-                            {% if w.status == 'pending' %}
-                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">pending</span>
+                            {% if w.status %}
+                            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">Complete</span>
+                            {% else %}
+                
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">Pending</span>
                             {% endif %}
-                            {% if w.status == 'complete' %}
-                            <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">complete</span>
-                            {% endif %}
-                            {% if w.status == 'reject' %}
-                            <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">reject</span>
-                            {% endif %}
+                         
                         </td>
                         <td class="py-2 px-4 border-b border-gray-200 text-sm">{{w.number}}</td>
                     </tr>

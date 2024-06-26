@@ -99,7 +99,7 @@ def leaderboard(request):
     p = Profile.objects.all().order_by('-balance')[0:10]
     return render(request, 'lead.html', context={'p':p})
 
-
+"""
 def dashboard(request):
     if request.user.is_authenticated:
         pr = Profile.objects.get(user=request.user)
@@ -109,6 +109,34 @@ def dashboard(request):
         context = {'rf':rf, 'r':r, 'p':pr}
         return render(request, 'dashhome.html', context)
     return render(request, 'login.html')
+"""
+
+
+def dashboard(request):
+    if request.user.is_authenticated:
+        
+        con = False
+        if request.GET.get('confetti'):
+            con = True
+        pr = Profile.objects.get(user=request.user)
+        r = pr.total_refer()
+        rf = Referral.objects.filter(referrer=pr, generation=1).order_by('-id')[0:5]
+        fund = 0
+        profit = 0
+        try:
+            fn = Funded.objects.filter(profle=pr)[0]
+            fund = fn.total_bal()
+            profit = Profit.objects.get(profile=pr)
+        except:
+            pass
+
+        context = {'profit':profit, 'rf':rf, 'r':r, 'p':pr, 'fund':fund, 'con':con}
+        return render(request, 'dashhome.html', context)
+    return render(request, 'login.html')
+
+
+
+
 
 
 def handle_login(request):
@@ -261,6 +289,168 @@ def change_password(request):
         update_session_auth_hash(request, u)
         return render(request, 'changepass.html', context={'suc': 'Password changed sucessfully.'})
     return render(request, 'changepass.html')
+    
+    
+    
+
+
+
+@onlyuser
+def pack(request):
+    if request.method == 'GET':
+        return render(request, 'pack.html', context={'pg': FundPackage.objects.all()})
+
+
+@onlyuser
+def create_fund(request, name):
+    gf = FundPackage.objects.get(name=name)
+    if Funded.objects.filter(profle= Profile.objects.get(user=request.user), package=gf).exists():
+        return render(request, 'pack.html', context={'pg': FundPackage.objects.all(), 'msg': 'You already donated on this package'})
+    
+    if request.GET.get('active') == 'balance':
+        pr = Profile.objects.get(user=request.user)
+        if not pr.balance >= gf.price:
+            return render(request, 'pack.html', context={'pg': FundPackage.objects.all(), 'msg': 'You do not have balance for buy this package'})
+        else:
+            Funded.objects.create(profle=pr, package=gf, balance=gf.price)
+            pr.balance = pr.balance - gf.price
+            pr.save()
+            """
+            try:
+                pro = Profit.objects.get(profile=pr)
+                pro.alltime = pro.alltime + gf.price
+                pro.save()
+            except Exception as e:
+                print(e)
+                Profit.objects.create(profile=pr, alltime=gf.price)"""
+            return redirect('/dashboard?confetti=true')
+    
+    url = "https://pay.csgroup.my.id/api/checkout-v2"
+    payload = {
+    "full_name": request.user.username,
+    "email": request.user.email,
+    "amount": gf.price,
+    "metadata": {
+        "pak_name": name
+    },
+    "redirect_url": "https://csgroup.my.id/fundcheck",
+    "return_type": "GET",
+    "cancel_url": "https://csgroup.my.id"
+    }
+    headers = {
+    "accept": "application/json",
+    "RT-UDDOKTAPAY-API-KEY": "f1d5bd54b659a131aad3020f1bbcd15e5bd275d9",
+    "content-type": "application/json"
+    }
+
+    response = requests.post(url, json=payload, headers=headers)
+
+    print(response.text)
+    xx = json.loads(response.text)
+    return redirect(xx['payment_url'])
+
+
+@onlyuser
+def fundcheck(request):
+    print("checking fund...")
+    request.GET.get('invoice_id')
+    if request.GET.get('invoice_id'):
+        request.GET.get('invoice_id')
+        url = "https://pay.csgroup.my.id/api/verify-payment"
+        payload = { "invoice_id": request.GET.get('invoice_id') }
+        headers = {
+        "accept": "application/json",
+        "RT-UDDOKTAPAY-API-KEY": "f1d5bd54b659a131aad3020f1bbcd15e5bd275d9",
+        "content-type": "application/json"
+        }
+        response = requests.post(url, json=payload, headers=headers)
+        print(response.text)
+        xx = json.loads(response.text)
+
+        stats = xx['status']
+
+        if stats == 'COMPLETED':
+            fp = FundPackage.objects.get(name=xx['metadata']['pak_name'])
+            p = Profile.objects.get(user__username=xx['full_name'])
+            
+            f = Funded.objects.create(
+                    package= fp ,
+                    profle=p,
+                    balance= fp.price)
+
+            return redirect('/dashboard?confetti=true')
+        return redirect('/dashboard')
+
+@onlyuser
+def transfer_fund(request):
+    p= Profile.objects.get(user=request.user)
+    ff = Funded.objects.filter(profle=p).order_by('-id')
+    if ff.exists():
+        fff = ff[0]
+        price = fff.package.price
+        
+       
+        for_transfer = FundPackage.objects.filter(price__gt=price)[0]
+       
+        print("for transfer", for_transfer)
+        return render(request, 'transfer.html', context={'fortrans': for_transfer})
+    else:
+        return render(request, 'transfer.html', context={'msg': 'You have not active any fund yet. please go to the saving fund and buy one.'})
+        
+
+@onlyuser
+def transfer_fund_handle(request, id):
+    pack = FundPackage.objects.get(id=id)
+    try:
+        fund = Funded.objects.filter(profle=Profile.objects.get(user=request.user), is_rewarded=True).order_by('-id')[0] 
+        
+        if fund.balance >= pack.price:
+            Funded.objects.create(package=pack,  profle=Profile.objects.get(user=request.user), balance=pack.price)
+            fund.balance = fund.balance - pack.price
+            fund.save()
+            pro = Profit.objects.get(profile=Profile.objects.get(user=request.user))
+            pro.balance = pro.balance - pack.price
+            pro.alltime = pro.alltime + pack.price
+            pro.save()
+            return redirect('/dashboard?confetti=true')
+        else:
+            return render(request, 'transfer.html', context={'msg':'You are not finished the current fund game. once you got your reward then you can transfer your fund.'})
+    except Exception as e:
+        print("arey buij", e)
+        return render(request, 'transfer.html', context={'msg': 'You have to finish one fund reward. then you can transfet to another.'})
+            
+            
+        
+        
+    
+@onlyuser
+def fund_withdraw(request):
+    
+    p = Profile.objects.get(user=request.user)
+    ww = FundWithdraw.objects.filter(profile=p).order_by('-id')
+    try:
+        pr = Profit.objects.get(profile=p)
+    except Exception as e:
+        print("hi im from fund withraw", e)
+        return redirect('/package')
+    
+    if request.method == "POST":
+        print("ahhha uhhu fuckin gshit im just runned man")
+        amount = request.POST.get('amount')
+        method = request.POST.get('method')
+        number = request.POST.get('number')
+        
+        
+        print(amount, method, number, p)
+
+        if int(amount) > int(pr.balance):
+            return JsonResponse({'message' : 'Withdraw amount should be less then balance'})
+        w = FundWithdraw.objects.create(profile=p, amount=amount, number=number, method=method, status=False)
+        pr.balance = pr.balance - float(amount)
+        pr.save()
+        return redirect('/fund-withdraw')
+    return render(request, 'fundwithdraw.html', context={'pr':pr, 'ww':ww})
+
 
             
 

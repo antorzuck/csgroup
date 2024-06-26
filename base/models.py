@@ -162,3 +162,102 @@ def create_referral(sender, instance, created, **kwargs):
 
             # Increment generation counter
             generation += 1
+            
+            
+            
+            
+
+         
+
+class FundPackage(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    price = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
+        
+
+class Counter(models.Model):
+    num = models.IntegerField(default=1)
+    package = models.ForeignKey(FundPackage, on_delete=models.CASCADE, null=True, blank=True)
+    
+
+    def __str__(self):
+        return str(self.num)
+   
+
+class Funded(models.Model):
+    profle = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='funding')
+    package = models.ForeignKey(FundPackage, on_delete=models.CASCADE, related_name='pack')
+    balance = models.IntegerField(default=00)
+    is_rewarded = models.BooleanField(default=False)
+
+    def total_bal(self):
+        fnf = Funded.objects.filter(profle=self.profle)
+        money = sum([i.balance for i in fnf])
+        return money
+        
+    def __str__(self):
+        return f'funding by {str(self.profle.name)} on {str(self.package.name)}'
+
+
+
+class Profit(models.Model):
+    alltime = models.IntegerField(default=0)
+    balance = models.IntegerField(default=0)
+    profits = models.IntegerField(default=0)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f"Profit of {str(self.profile.name)}"
+
+
+class FundWithdraw(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    amount = models.IntegerField(default=0)
+    method = models.CharField(max_length=100)
+    status = models.BooleanField(default=False)
+    number = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.status} withdraw of {str(self.profile.user.username)}"
+
+
+
+
+
+
+@receiver(post_save, sender=Funded)
+def reward(sender, instance, created, **kwargs):
+    print("reward")
+    if not Profit.objects.filter(profile=instance.profle).exists():
+        Profit.objects.create(profile=instance.profle, alltime=instance.package.price)
+    if created:
+        ff = Funded.objects.filter(package=instance.package, is_rewarded=False).exclude(id=instance.id).order_by('-id')
+        try:
+            xxx = Counter.objects.get(package=instance.package)
+            get_rwrd_id = ff[xxx.num]
+            fx = Funded.objects.get(id=get_rwrd_id.id)
+            fx.balance = fx.balance + instance.package.price
+            fx.is_rewarded = True
+            fx.save()
+            xxx.num = xxx.num + 1
+            xxx.save()
+            
+            pro = Profit.objects.get(profile=get_rwrd_id.profle)
+            pro.balance = pro.balance + instance.package.price * 2
+            pro.profits = pro.profits + instance.package.price * 2
+            pro.save()
+          
+            
+                
+
+
+        except Exception as e:
+            print(e)
+            if not Counter.objects.filter(package=instance.package).exists():
+                Counter.objects.create(package=instance.package)
+                
+
+
