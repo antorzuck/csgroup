@@ -25,7 +25,8 @@ urlpatterns = [
     path('forget-password', reset_email),
     path('reset-code', reset_code),
     path('change-password', change_password),
-    path('teams/<str:username>', get_teams)
+    path('teams/<str:username>', get_teams),
+    path('check-serial/<int:id>', check_serial)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

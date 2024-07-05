@@ -1,0 +1,42 @@
+
+{% extends 'dash.html' %}
+
+
+
+{% block body %}
+  
+  
+  <div class="container mx-auto p-6">
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-500 to-teal-400 text-white text-center py-4 text-2xl font-semibold">
+                Serial for this fund
+            </div>
+            <ul class="divide-y divide-gray-200">
+                <!-- Leaderboard Item -->
+
+                {% for i in fund_users %}
+                <li class="flex items-center justify-between p-4">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-lg font-medium">{{ forloop.counter }}</span>
+                        <img class="w-10 h-10 rounded-full" src="https://api.dicebear.com/8.x/big-smile/svg?seed={{i.user.username}}" alt="User Avatar">
+                        <div>
+                            <p class="text-lg font-semibold">{{i.profle.name}}</p>
+                            <p class="text-sm text-gray-500">balance: {{i.profle.balance}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="/teams/{{i.profle.user.username}}">
+                        <button class="bg-cyan-700 text-white px-4 py-2 rounded-md hover:bg-blue-600">View Team</button>
+                        </a>
+                    </div>
+                </li>
+
+                {% endfor %}
+               
+   
+            </ul>
+        </div>
+    </div>
+
+    {% endblock %}
+

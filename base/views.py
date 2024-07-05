@@ -450,7 +450,17 @@ def fund_withdraw(request):
         pr.save()
         return redirect('/fund-withdraw')
     return render(request, 'fundwithdraw.html', context={'pr':pr, 'ww':ww})
-
+    
+def check_serial(request, id):
+    pack =FundPackage.objects.get(id=id)
+    fund_users =Funded.objects.filter(
+        is_rewarded=False,
+        package = pack)
+    print("funded users data here we go", fund_users)
+    context = {'fund_users' : fund_users}
+    return render(request, 'serial.html', context)
+    
+    
 
             
 
