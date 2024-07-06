@@ -7,7 +7,7 @@ import requests
 import json
 from django.core.paginator import Paginator
 from django.views.decorators.csrf import csrf_exempt
-from base.decorators import onlyuser
+from base.decorators import onlyuser, restrict_withdraw_time, check_withdrawal_limit
 from django.core.mail import send_mail
 from django.conf import settings
 
@@ -77,6 +77,8 @@ def success(request):
 
 
 @onlyuser
+@restrict_withdraw_time
+@check_withdrawal_limit
 def withdrawl(request):
     p = Profile.objects.get(user=request.user)
     ww = Withdraw.objects.filter(profile=p).order_by('-id')
@@ -424,6 +426,8 @@ def transfer_fund_handle(request, id):
         
     
 @onlyuser
+@restrict_withdraw_time
+@check_withdrawal_limit
 def fund_withdraw(request):
     
     p = Profile.objects.get(user=request.user)

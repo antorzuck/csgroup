@@ -34,7 +34,7 @@
                 
                 
                 <div class="btns flex flex-col items-center justify-around gap-1">
-                
+                {% if p.id == 1 %}
                 <a name="btn" value="withbal" class="py-3 rounded-md text-white px-4 bg-pink-500" href="/createfund/{{p.name}}?active=balance">
                 Active with Balance
                 </a>
@@ -44,7 +44,7 @@
                 <a name="btn" value="withbkash" class="py-3 rounded-md text-white px-4 bg-blue-500" href="/createfund/{{p.name}}?active=bkash">
                 Active with Bkash
                 </a>
-                
+                {% endif %}
                 
                 <a href="/check-serial/{{p.id}}" class="py-3 rounded-md text-white px-4 bg-green-500">
         Check serial on this fund

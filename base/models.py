@@ -225,7 +225,29 @@ class FundWithdraw(models.Model):
 
 
 
+def transfer_fund_auto(pid, user):
+    print("i run bro after reward complete")
+    pack = FundPackage.objects.filter(id__gt=pid)[0]
+    print("heeeeeee", pack)
+    print(FundPackage.objects.filter(id__gt=pid))
+    try:
+        fund = Funded.objects.filter(profle=user, is_rewarded=True).order_by('-id')[0]
+        print("after checking balance")
 
+        if fund.balance >= pack.price:
+            print("yes, greater")
+            Funded.objects.create(package=pack,  profle=user, balance=pack.price)
+            print("yes created")
+            fund.balance = fund.balance - pack.price
+            fund.save()
+            pro = Profit.objects.get(profile=user)
+            pro.balance = pro.balance - pack.price
+            pro.alltime = pro.alltime + pack.price
+            pro.save()
+        else:
+            pass
+    except Exception as e:
+        print("arey buij", e)
 
 
 @receiver(post_save, sender=Funded)
@@ -249,6 +271,11 @@ def reward(sender, instance, created, **kwargs):
             pro.balance = pro.balance + instance.package.price * 2
             pro.profits = pro.profits + instance.package.price * 2
             pro.save()
+            id = instance.package.id
+            print("the id is", id)
+            transfer_fund_auto(pid=id, user=get_rwrd_id.profle)
+            print("fun called")
+            
           
             
                 
