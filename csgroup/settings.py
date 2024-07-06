@@ -42,7 +42,7 @@ MIDDLEWARE = [
 
 
 
-MAINTENANCE_MODE = True
+MAINTENANCE_MODE = False
 
 ROOT_URLCONF = 'csgroup.urls'
 

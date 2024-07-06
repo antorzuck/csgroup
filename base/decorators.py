@@ -38,5 +38,7 @@ def check_withdrawal_limit(view_func):
             today = timezone.now().date()
             if Withdraw.objects.filter(profile=Profile.objects.get(user=request.user), created_at__date=today).exists():
                 return render(request, 'withdrawlimit.html')
+            if FundWithdraw.objects.filter(profile=Profile.objects.get(user=request.user), created_at__date=today).exists():
+                return render(request, 'withdrawlimit.html')
         return view_func(request, *args, **kwargs)
     return _wrapped_view
